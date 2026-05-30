@@ -3,6 +3,10 @@ const db = require('./config/db');
 
 const app = express();
 
+app.get('/', (req, res) => {
+    res.send('Servidor funcionando');
+});
+
 app.get('/test-db', async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM categorias');
