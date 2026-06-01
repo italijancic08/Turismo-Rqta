@@ -1,0 +1,320 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#263238;
+    background:#fff;
+}
+
+
+img{
+    width:100%;
+    display:block;
+}
+
+header{
+    height: 100vh;
+     background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.571),
+            rgba(15, 14, 14, 0.204)
+        ),
+        url('https://fotos.perfil.com/2021/04/27/trim/1280/720/0427reconquista-1164433.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+a{
+    text-decoration:none;
+}
+
+.navbar{
+    position:absolute;
+    width:100%;
+    z-index:10;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:20px 8%;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.search-box{
+    display:flex;
+    align-items:center;
+
+    background:white;
+    border-radius:50px;
+    overflow:hidden;
+
+    height:42px;
+}
+
+.search-box input{
+    border:none;
+    outline:none;
+
+    padding:0 15px;
+    width:180px;
+
+    font-family:'Poppins',sans-serif;
+}
+
+.search-container{
+    display:flex;
+    align-items:center;
+    position:relative;
+    margin-left: auto;
+}
+
+.search-btn{
+    width:42px;
+    height:42px;
+
+    border:none;
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.15);
+    color:white;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+
+    position: absolute;
+    right: 0px;
+}
+
+.search-btn:hover{
+    background:rgba(255,255,255,0.25);
+}
+
+.search-input{
+    position:absolute;
+    right:50px;
+
+    width:0;
+
+    opacity:0;
+
+    border:none;
+    outline:none;
+
+    padding:10px 0;
+
+    border-radius:25px;
+
+    transition:all .35s ease;
+
+    font-family:'Poppins',sans-serif;
+    background:rgba(255,255,255,.15);
+    color:white;
+    backdrop-filter:blur(10px);
+}
+
+.search-input::placeholder{
+    color:rgba(255,255,255,.8);
+}
+
+.search-box button{
+    border:none;
+    background:#00ACC1;
+    color:white;
+
+    width:45px;
+    height:42px;
+
+    cursor:pointer;
+}
+
+.logo{
+    color:white;
+    font-size:1.4rem;
+    font-weight:700;
+    display: flex;
+    width: 300px;
+    height: auto;
+
+
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.nav-links a{
+    color:white;
+    font-weight:500;
+}
+
+.hero{
+    height:100vh;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.45)
+    ),
+    url('../img/hero.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.hero-content{
+    color:white;
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn-primary{
+    display:inline-block;
+    background:#00ACC1;
+    color:white;
+    padding:14px 30px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-admin{
+    background:#2E7D32;
+    color:white;
+
+    padding:10px 22px;
+    border-radius:30px;
+
+    margin-left:10px;
+}
+
+.categorias,
+.destacados{
+    padding:80px 8%;
+}
+
+.categorias h2,
+.destacados h2{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.cards-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card,
+.card-lugar{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    transition:.3s;
+}
+
+.card:hover,
+.card-lugar:hover{
+    transform:translateY(-8px);
+}
+
+.card h3,
+.card-lugar h3{
+    margin:15px;
+}
+
+.card p,
+.card-lugar p{
+    margin:0 15px 20px;
+}
+
+.card-lugar a{
+    color:#00ACC1;
+    font-weight:600;
+}
+
+.contenido{
+    padding-bottom:20px;
+}
+
+.prestador-banner{
+    background:#2E7D32;
+    color:white;
+
+    padding:80px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+footer{
+    background:#263238;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .prestador-banner{
+        flex-direction:column;
+        text-align:center;
+        gap:25px;
+    }
+
+}
