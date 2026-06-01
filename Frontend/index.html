@@ -22,12 +22,14 @@
         </div>
 
         <ul class="nav-links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Qué Hacer</a></li>
-            <li><a href="#">Alojamientos</a></li>
-            <li><a href="#">Gastronomía</a></li>
-            <li><a href="#">Prestadores</a></li>
-        </ul>
+    <li>
+        <a href="#" id="btnExplorar">Explorar</a>
+    </li>
+    <li><a href="/Frontend/pages/quehacer.html">Qué Hacer</a></li>
+    <li><a href="/Frontend/pages/alojamientos.html">Alojamientos</a></li>
+    <li><a href="/Frontend/pages/gastronomia.html">Gastronomía</a></li>
+    <li><a href="/Frontend/pages/prestadores.html">Prestadores</a></li>
+</ul>
         
          <div class="search-container">
 
@@ -60,10 +62,6 @@
                 en el norte santafesino.
             </p>
 
-            <a href="#categorias" class="btn-primary">
-                Explorar
-            </a>
-
         </div>
 
     </section>
@@ -72,90 +70,95 @@
 
 <main>
 
-    <section id="categorias" class="categorias">
+    <ul class="nav-links">
+    <li>
+        <a href="#" id="btnExplorar">Explorar</a>
+    </li>
+    <li><a href="/Frontend/pages/quehacer.html">Qué Hacer</a></li>
+    <li><a href="/Frontend/pages/alojamientos.html">Alojamientos</a></li>
+    <li><a href="/Frontend/pages/gastronomia.html">Gastronomía</a></li>
+    <li><a href="/Frontend/pages/prestadores.html">Prestadores</a></li>
+</ul>
 
         <h2>¿Qué estás buscando?</h2>
 
         <div class="cards-grid">
 
-            <article class="card">
-                <img src="img/que-hacer.jpg" alt="">
+            <a href="/Frontend/pages/quehacer.html"><article class="card">
+                <img src="https://s3.eu-central-003.backblazeb2.com/vsign-wp-surenio-offload/wp-content/uploads/2020/12/humedal.jpg" alt="">
                 <h3>Qué Hacer</h3>
                 <p>Actividades, eventos y sitios turísticos.</p>
-            </article>
+            </article></a>
 
-            <article class="card">
-                <img src="img/alojamiento.jpg" alt="">
+            <a href="/Frontend/pages/alojamientos.html"><article class="card">
                 <h3>Alojamientos</h3>
                 <p>Hoteles, cabañas y hospedajes.</p>
-            </article>
+                 <img src="https://sanlorenzo.gob.ar/wp-content/uploads/2018/09/alojamiento-1.jpg" alt="">
+            </article></a>
 
-            <article class="card">
-                <img src="img/gastronomia.jpg" alt="">
+            <a href="/Frontend/pages/gastronomia.html"><article class="card">
+                <img src="https://carnesargentinas.es/wp-content/uploads/2023/06/Las-9-comidas-argentinas-m%C3%A1s-sabrosas.jpg" alt="">
                 <h3>Gastronomía</h3>
                 <p>Sabores locales para disfrutar.</p>
-            </article>
+            </article></a>
 
-            <article class="card">
-                <img src="img/prestadores.jpg" alt="">
+            <a href="/Frontend/pages/prestadores.html"><article class="card">
                 <h3>Prestadores</h3>
                 <p>Servicios turísticos habilitados.</p>
-            </article>
+                <img src="https://media.istockphoto.com/id/664304800/es/foto/conceptos-de-pesca.jpg?s=612x612&w=0&k=20&c=1sMPjxa_cwIwuSSabOvMveCWIxkm4CkA4W51zGP7DE8=" alt="">
+            </article></a>
 
         </div>
 
     </section>
 
-    <section class="destacados">
+   <section class="eventos">
 
-        <h2>Lugares Destacados</h2>
+    <h2>
+        <span>Eventos</span> populares
+    </h2>
 
-        <div class="cards-grid">
+    <div class="slider-wrapper">
 
-            <article class="card-lugar">
+        <button class="slider-btn prev">
+            &#10094;
+        </button>
 
-                <img src="img/sitio1.jpg" alt="">
+        <div class="viewport">
 
-                <div class="contenido">
+            <div class="slider">
 
-                    <h3>Puerto Reconquista</h3>
-
-                    <p>
-                        Uno de los principales atractivos
-                        naturales de la ciudad.
-                    </p>
-
-                    <a href="#">
-                        Ver ubicación
-                    </a>
-
+                <div class="slide">
+                    <img src="https://reconquista.gob.ar/turismo/wp-content/uploads/2024/02/Recurso-1-1-768x298-1.png" alt="Carnavales">
                 </div>
 
-            </article>
-
-            <article class="card-lugar">
-
-                <img src="img/sitio2.jpg" alt="">
-
-                <div class="contenido">
-
-                    <h3>Camping Municipal</h3>
-
-                    <p>
-                        Ideal para disfrutar de la naturaleza.
-                    </p>
-
-                    <a href="#">
-                        Ver ubicación
-                    </a>
-
+                <div class="slide">
+                    <img src="https://reconquista.gob.ar/turismo/wp-content/uploads/2024/02/Logo-Rally_SIN-FECHA.png" alt="Rally">
                 </div>
 
-            </article>
+                <div class="slide">
+                    <img src="https://reconquista.gob.ar/turismo/wp-content/uploads/2024/02/Logo-Festival-Jauukanigas.png" alt="Jaaukanigás">
+                </div>
+
+                <div class="slide">
+                    <img src="https://reconquista.gob.ar/turismo/wp-content/uploads/2024/01/Pesca-del-Surubi-1.png" alt="Surubí">
+                </div>
+
+                <div class="slide">
+                    <img src="https://reconquista.gob.ar/turismo/wp-content/uploads/2024/07/LOGO-Gente-del-Agua-01-1.png" alt="Gente del agua">
+                </div>
+
+            </div>
 
         </div>
 
-    </section>
+        <button class="slider-btn next">
+            &#10095;
+        </button>
+
+    </div>
+
+</section>
 
     <section class="prestador-banner">
 
