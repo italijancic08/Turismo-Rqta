@@ -1,3 +1,7 @@
+/* ========================================
+   CONFIGURACIÓN GENERAL
+======================================== */
+
 html,
 body{
     scroll-behavior:smooth;
@@ -15,28 +19,36 @@ body{
     background:#fff;
 }
 
-
 img{
     width:100%;
     display:block;
 }
 
-header{
-    height: 100vh;
-     background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.571),
-            rgba(15, 14, 14, 0.204)
-        ),
-        url('https://fotos.perfil.com/2021/04/27/trim/1280/720/0427reconquista-1164433.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
 a{
     text-decoration:none;
 }
+
+/* ========================================
+   HEADER
+======================================== */
+
+header{
+    height:100vh;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.822),
+            rgba(12, 11, 11, 0.432)
+        ),
+        url('https://fotos.perfil.com/2021/04/27/trim/1280/720/0427reconquista-1164433.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* ========================================
+   NAVBAR
+======================================== */
 
 .navbar{
     position:absolute;
@@ -50,38 +62,37 @@ a{
     padding:20px 2%;
 }
 
-.nav-right{
+.logo{
+    width:300px;
+}
+
+.nav-links{
     display:flex;
-    align-items:center;
-    gap:20px;
+    gap:30px;
+    list-style:none;
+
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
 }
 
-.search-box{
-    display:flex;
-    align-items:center;
-
-    background:white;
-    border-radius:50px;
-    overflow:hidden;
-
-    height:42px;
+.nav-links a,
+.nav-links a:visited,
+.nav-links a:hover,
+.nav-links a:active{
+    color:white;
+    font-weight:500;
 }
 
-.search-box input{
-    border:none;
-    outline:none;
-
-    padding:0 15px;
-    width:180px;
-
-    font-family:'Poppins',sans-serif;
-}
+/* ========================================
+   BUSCADOR
+======================================== */
 
 .search-container{
     display:flex;
     align-items:center;
     position:relative;
-    margin-left: auto;
+    margin-left:auto;
 }
 
 .search-btn{
@@ -91,21 +102,20 @@ a{
     border:none;
     border-radius:50%;
 
-    background:rgba(255,255,255,0.15);
+    background:rgba(255,255,255,.15);
     color:white;
 
     cursor:pointer;
 
     backdrop-filter:blur(10px);
-
     transition:.3s;
 
-    position: absolute;
-    right: 0px;
+    position:absolute;
+    right:0;
 }
 
 .search-btn:hover{
-    background:rgba(255,255,255,0.25);
+    background:rgba(255,255,255,.25);
 }
 
 .search-input{
@@ -113,7 +123,6 @@ a{
     right:50px;
 
     width:0;
-
     opacity:0;
 
     border:none;
@@ -123,66 +132,54 @@ a{
 
     border-radius:25px;
 
-    transition:all .35s ease;
-
-    font-family:'Poppins',sans-serif;
     background:rgba(255,255,255,.15);
     color:white;
+
     backdrop-filter:blur(10px);
+
+    transition:all .35s ease;
 }
 
 .search-input::placeholder{
     color:rgba(255,255,255,.8);
 }
 
-.search-box button{
-    border:none;
+/* ========================================
+   BOTONES
+======================================== */
+
+.btn-primary{
+    display:inline-block;
+
     background:#00ACC1;
     color:white;
 
-    width:45px;
-    height:42px;
+    padding:14px 30px;
+    border-radius:50px;
 
-    cursor:pointer;
+    transition:.3s;
 }
 
-.logo{
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-admin{
+    background:#2E7D32;
     color:white;
-    font-size:1.4rem;
-    font-weight:700;
-    display: flex;
-    width: 300px;
-    height: auto;
 
+    padding:10px 22px;
+    border-radius:30px;
 
+    margin-left:10px;
 }
 
-.nav-links{
-    display:flex;
-    gap:30px;
-    list-style:none;
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-}
-
-.nav-links a{
-    color:white;
-    font-weight:500;
-}
+/* ========================================
+   HERO
+======================================== */
 
 .hero{
     height:100vh;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.45),
-        rgba(0,0,0,.45)
-    ),
-    url('../img/hero.jpg');
-
-    background-size:cover;
-    background-position:center;
 
     display:flex;
     justify-content:center;
@@ -203,131 +200,79 @@ a{
 
 .hero p{
     font-size:1.2rem;
-    margin-bottom:30px;
 }
 
-.btn-primary{
-    display:inline-block;
-    background:#00ACC1;
-    color:white;
-    padding:14px 30px;
-    border-radius:50px;
-    transition:.3s;
+/* ========================================
+   CATEGORÍAS
+======================================== */
+
+.categorias{
+    padding:50px 5% 80px;
 }
 
-.btn-primary:hover{
-    transform:translateY(-3px);
-}
-
-.btn-admin{
-    background:#2E7D32;
-    color:white;
-
-    padding:10px 22px;
-    border-radius:30px;
-
-    margin-left:10px;
-}
-
-.categorias,
-.destacados{
-    padding:80px 8%;
-}
-
-.categorias h2,
-.destacados h2{
+.categorias h2{
     text-align:center;
-    margin-bottom:50px;
+    font-size:3rem;
+    font-weight:300;
+    margin-bottom:60px;
 }
+
+.categorias h2 span{
+    color:#2E7D32;
+    font-weight:700;
+}
+
+/* ========================================
+   CARDS
+======================================== */
 
 .cards-grid{
     display:grid;
-    gap:25px;
-    grid-template-columns:repeat(4, 1fr);
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    max-width:1400px;
+    margin:0 auto;
 }
 
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
+.cards-grid > a,
+.cards-grid > a:visited{
+    color:#263238;
 }
 
-.card,
-.card-lugar{
+.card{
     background:white;
+
     border-radius:20px;
     overflow:hidden;
+
     box-shadow:
-    0 10px 25px rgba(0,0,0,.08);
-    height: fit-content;
+        0 10px 25px rgba(0,0,0,.08);
+
     transition:.3s;
 }
 
-.card:hover,
-.card-lugar:hover{
+.card:hover{
     transform:translateY(-8px);
 }
 
-.card h3,
-.card-lugar h3{
+.card img{
+    height:150px;
+    object-fit:cover;
+}
+
+.card h3{
     margin:15px;
 }
 
-.card p,
-.card-lugar p{
+.card p{
     margin:0 15px 20px;
 }
 
-.card-lugar a{
-    color:#00ACC1;
-    font-weight:600;
-}
-
-.contenido{
-    padding-bottom:20px;
-}
-
-.prestador-banner{
-    background:#2E7D32;
-    color:white;
-
-    padding:80px 8%;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-footer{
-    background:#263238;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-
-@media(max-width:768px){
-
-    .navbar{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .hero h1{
-        font-size:2.5rem;
-    }
-
-    .prestador-banner{
-        flex-direction:column;
-        text-align:center;
-        gap:25px;
-    }
-
-}
+/* ========================================
+   EVENTOS
+======================================== */
 
 .eventos{
     padding:100px 5%;
@@ -337,8 +282,9 @@ footer{
 .eventos h2{
     text-align:center;
     font-size:3rem;
-    margin-bottom:60px;
     font-weight:300;
+
+    margin-bottom:60px;
 }
 
 .eventos h2 span{
@@ -346,10 +292,14 @@ footer{
     font-weight:700;
 }
 
+/* ========================================
+   SLIDER
+======================================== */
+
 .slider-wrapper{
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     gap:30px;
 }
 
@@ -381,7 +331,6 @@ footer{
 }
 
 .slide img{
-    width:100%;
     max-width:220px;
     height:150px;
 
@@ -404,11 +353,10 @@ footer{
     background:white;
 
     font-size:24px;
-
     cursor:pointer;
 
     box-shadow:
-    0 5px 15px rgba(0,0,0,.15);
+        0 5px 15px rgba(0,0,0,.15);
 
     transition:.3s;
 }
@@ -417,44 +365,81 @@ footer{
     transform:scale(1.1);
 }
 
-.card a,
-.card a:visited,
-.card a:hover,
-.card a:active{
-    color:#000000;
-    text-decoration:none;
+/* ========================================
+   PRESTADORES
+======================================== */
+
+.prestador-banner{
+    background:#2E7D32;
+    color:white;
+
+    padding:80px 8%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.nav-links a,
-.nav-links a:visited,
-.nav-links a:hover,
-.nav-links a:active{
+/* ========================================
+   FOOTER
+======================================== */
+
+footer{
+    background:#263238;
     color:white;
-    text-decoration:none;
+
+    text-align:center;
+    padding:30px;
 }
+
+/* ========================================
+   RESPONSIVE
+======================================== */
 
 @media(max-width:1000px){
+
+    .cards-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 
     .viewport{
         width:600px;
     }
 
-    .slide{
-        flex:0 0 300px;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .prestador-banner{
+        flex-direction:column;
+        text-align:center;
+        gap:25px;
     }
 
 }
 
 @media(max-width:700px){
 
+    .cards-grid{
+        grid-template-columns:1fr;
+    }
+
     .viewport{
         width:300px;
     }
 
-}
-
-.cards-grid > a,
-.cards-grid > a:visited{
-    color:#263238;
-    text-decoration:none;
 }
