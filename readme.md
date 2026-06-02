@@ -48,13 +48,13 @@ Modernizar el portal turístico de la ciudad permitiendo:
 | Diseño Home     | 🟡 En desarrollo  |
 | Navbar          | 🟡 En desarrollo  |
 | Buscador        | 🟡 En desarrollo  |
-| Qué Hacer       | ⬜ Pendiente      |
+| Qué Hacer       | 🟡 En desarrollo  |
 | Alojamientos    | ⬜ Pendiente      |
 | Gastronomía     | ⬜ Pendiente      |
 | Prestadores     | ⬜ Pendiente      |
 | Login Prestador | ⬜ Pendiente      |
 | Panel Prestador | ⬜ Pendiente      |
-| Backend         | ⬜ Pendiente      |
+| Backend         | 🟡 En desarrollo  |
 | Base de Datos   | 🟡 En desarrollo  |
 
 ---
