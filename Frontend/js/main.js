@@ -89,3 +89,24 @@ if (slider && nextBtn && prevBtn && slides.length > 0) {
     }, 4000);
 
 }
+
+// =========================
+// EXPLORAR
+// =========================
+
+const btnExplorar = document.getElementById("btnExplorar");
+
+if (btnExplorar) {
+
+    btnExplorar.addEventListener("click", (e) => {
+
+        e.preventDefault();
+
+        window.scrollTo({
+            top: window.innerHeight,
+            behavior: "smooth"
+        });
+
+    });
+
+}
