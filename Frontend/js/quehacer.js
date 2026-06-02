@@ -1,16 +1,19 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
     const contenedor =
-        document.getElementById("contenedor-actividades");
+    document.getElementById("contenedor-actividades");
 
-    try {
+    try{
 
-        const respuesta = await fetch(
+        const respuesta =
+        await fetch(
             "http://localhost:3000/api/actividades"
         );
 
         const actividades =
-            await respuesta.json();
+        await respuesta.json();
+
+        contenedor.innerHTML = "";
 
         actividades.forEach(act => {
 
@@ -18,10 +21,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             <div class="actividad-wrapper">
 
-                <article class="card-actividad">
+                <div class="card-actividad">
 
                     <img
-                        src="/Frontend/img/${act.imagen}"
+                        src="${act.imagen}"
                         alt="${act.nombre}"
                     >
 
@@ -30,21 +33,19 @@ document.addEventListener("DOMContentLoaded", async () => {
                         <h3>${act.nombre}</h3>
 
                         <p>
-                            ${act.descripcion}
+                            ${act.descripcion.substring(0,100)}...
                         </p>
 
                         <a
                             href="${act.maps_url}"
                             target="_blank"
                             class="btn-mas">
-
                             Ver más
-
                         </a>
 
                     </div>
 
-                </article>
+                </div>
 
                 <div class="info-popup">
 
@@ -55,6 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <div class="mini-mapa">
 
                         <iframe
+                            loading="lazy"
                             src="${act.maps_url.replace(
                                 'https://maps.google.com/?q=',
                                 'https://www.google.com/maps?q='
@@ -64,19 +66,18 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </div>
 
                     <p>
-
                         <strong>Dirección:</strong><br>
-
-                        ${act.direccion}
-
+                        ${act.direccion || "No disponible"}
                     </p>
 
                     <p>
-
                         <strong>Horario:</strong><br>
+                        ${act.horario || "Consultar"}
+                    </p>
 
-                        ${act.horario}
-
+                    <p>
+                        <strong>Contacto:</strong><br>
+                        ${act.contacto || "No disponible"}
                     </p>
 
                     <a
@@ -93,14 +94,16 @@ document.addEventListener("DOMContentLoaded", async () => {
             </div>
 
             `;
+
         });
 
-    } catch(error){
+    }catch(error){
 
         console.error(error);
 
-        contenedor.innerHTML =
-            "<h3>Error al cargar actividades</h3>";
+        contenedor.innerHTML = `
+            <h3>Error al cargar actividades</h3>
+        `;
     }
 
 });

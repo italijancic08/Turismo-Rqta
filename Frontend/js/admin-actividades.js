@@ -7,9 +7,11 @@ document.getElementById('formActividad');
 const lista =
 document.getElementById('listaActividades');
 
+let actividadEditando = null;
+
 cargarActividades();
 
-form.addEventListener('submit', async (e)=>{
+form.addEventListener('submit', async (e) => {
 
     e.preventDefault();
 
@@ -27,6 +29,9 @@ form.addEventListener('submit', async (e)=>{
         horario:
         document.getElementById('horario').value,
 
+        contacto:
+        document.getElementById('contacto').value,
+
         costo:
         document.getElementById('costo').value,
 
@@ -40,25 +45,49 @@ form.addEventListener('submit', async (e)=>{
         document.getElementById('categoria').value
     };
 
-    try{
+    try {
 
-        const respuesta = await fetch(API,{
-            method:'POST',
-            headers:{
-                'Content-Type':'application/json'
-            },
-            body:JSON.stringify(actividad)
-        });
+        let respuesta;
 
-        if(!respuesta.ok){
+        if (actividadEditando) {
+
+            respuesta = await fetch(
+                `${API}/${actividadEditando}`,
+                {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(actividad)
+                }
+            );
+
+        } else {
+
+            respuesta = await fetch(
+                API,
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(actividad)
+                }
+            );
+
+        }
+
+        if (!respuesta.ok) {
             throw new Error('Error al guardar');
         }
+
+        actividadEditando = null;
 
         form.reset();
 
         cargarActividades();
 
-    }catch(error){
+    } catch (error) {
 
         console.error(error);
 
@@ -67,9 +96,9 @@ form.addEventListener('submit', async (e)=>{
 
 });
 
-async function cargarActividades(){
+async function cargarActividades() {
 
-    try{
+    try {
 
         const res =
         await fetch(API);
@@ -77,12 +106,12 @@ async function cargarActividades(){
         const actividades =
         await res.json();
 
-        lista.innerHTML='';
+        lista.innerHTML = '';
 
-        actividades.forEach(act=>{
+        actividades.forEach(act => {
 
             lista.innerHTML += `
-            
+
             <div class="card">
 
                 <img
@@ -108,11 +137,24 @@ async function cargarActividades(){
                     </p>
 
                     <p>
+                        <strong>Contacto:</strong>
+                        ${act.contacto || '-'}
+                    </p>
+
+                    <p>
                         <strong>Categoría:</strong>
                         ${act.categoria || '-'}
                     </p>
 
                     <div class="acciones">
+
+                        <button
+                            class="btn-editar"
+                            onclick="editarActividad(${act.id})">
+
+                            Editar
+
+                        </button>
 
                         <button
                             class="btn-eliminar"
@@ -127,11 +169,11 @@ async function cargarActividades(){
                 </div>
 
             </div>
-            
+
             `;
         });
 
-    }catch(error){
+    } catch (error) {
 
         console.error(error);
 
@@ -141,31 +183,84 @@ async function cargarActividades(){
 
 }
 
-async function eliminarActividad(id){
+async function editarActividad(id) {
+
+    try {
+
+        const res =
+        await fetch(`${API}/${id}`);
+
+        const act =
+        await res.json();
+
+        document.getElementById('nombre').value =
+        act.nombre || '';
+
+        document.getElementById('descripcion').value =
+        act.descripcion || '';
+
+        document.getElementById('direccion').value =
+        act.direccion || '';
+
+        document.getElementById('horario').value =
+        act.horario || '';
+
+        document.getElementById('contacto').value =
+        act.contacto || '';
+
+        document.getElementById('costo').value =
+        act.costo || '';
+
+        document.getElementById('imagen').value =
+        act.imagen || '';
+
+        document.getElementById('maps_url').value =
+        act.maps_url || '';
+
+        document.getElementById('categoria').value =
+        act.categoria || '';
+
+        actividadEditando = id;
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert('Error al cargar actividad');
+    }
+
+}
+
+async function eliminarActividad(id) {
 
     const confirmar =
     confirm('¿Eliminar esta actividad?');
 
-    if(!confirmar){
+    if (!confirmar) {
         return;
     }
 
-    try{
+    try {
 
         const respuesta = await fetch(
             `${API}/${id}`,
             {
-                method:'DELETE'
+                method: 'DELETE'
             }
         );
 
-        if(!respuesta.ok){
+        if (!respuesta.ok) {
             throw new Error('Error al eliminar');
         }
 
         cargarActividades();
 
-    }catch(error){
+    } catch (error) {
 
         console.error(error);
 

@@ -147,12 +147,31 @@ Fecha: 01/06/2026
 
 * Sistema de datos.
 
-### incompleto
+---
 
-* Falta arreglar la interfaz visual de que ver
-* Falta agregar boton de regreso a homepage
-* Falta cargar todos los datos de que ver a la base
-* Falta arreglar el problema de las fotos con la base de datos
+## v0.1.5 - Pagina que ver e insercion de datos
+
+Fecha: 02/06/2026
+
+### Agregado
+
+* Insercion de contacto en la base de datos.
+* Pagina que ver mejorada.
+* Nueva pagina para administrar actividades donde se pueden cargar, editar y eliminar actividades.
+
+### Mejorado
+
+* interfaz visual.
+* sistema de datos.
+* comodidad.
+
+---
+
+### Cosas a hacer
+
+* Falta arreglar la navbar en que ver
+* Falta agregar un fondo detras de las cards
+* Falta acomodar el tamaño de los popups
 
 ---
 
@@ -174,6 +193,7 @@ Fecha: 01/06/2026
 * ☐ Configurar Express
 * ☐ Configurar MySQL
 * ☐ CRUD usuarios
+* ☑ CRUD que hacer
 * ☐ CRUD publicaciones
 * ☐ CRUD categorías
 * ☐ Login
@@ -186,13 +206,14 @@ Fecha: 01/06/2026
 * ☑ Categorías
 * ☑ Publicaciones
 * ☑ Imágenes
+* ☑ Actividades
 
 ---
 
 # Última Actualización
 
-Fecha: 01/06/2026
+Fecha: 02/06/2026
 
-Responsable: Equipo
+Responsable: Valentino Rivas
 
-Cambios realizados: v0.1.0, v0.1.1, v0.1.2
+Cambios realizados: v0.1.5
