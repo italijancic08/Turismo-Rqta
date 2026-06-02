@@ -118,6 +118,44 @@ Fecha: 01/06/2026
 
 ---
 
+## v0.1.3 - HTML y que ver
+
+Fecha: 01/06/2026
+
+### Agregado
+
+* Index mejorado y optimizado.
+* Creacion de la pagina que ver.
+
+### Mejorado
+
+* Interfaz.
+* Experiencia de usuario.
+
+---
+
+## v0.1.4 - Pagina que ver y base de datos
+
+Fecha: 01/06/2026
+
+### Agregado
+
+* Arreglo de mysql.
+* implementacion de la base de datos.
+
+### Mejorado
+
+* Sistema de datos.
+
+### incompleto
+
+* Falta arreglar la interfaz visual de que ver
+* Falta agregar boton de regreso a homepage
+* Falta cargar todos los datos de que ver a la base
+* Falta arreglar el problema de las fotos con la base de datos
+
+---
+
 # Lista de Tareas
 
 ## Frontend
