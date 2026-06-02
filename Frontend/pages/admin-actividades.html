@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Actividades</title>
+
+    <link rel="stylesheet" href="/Frontend/css/admin-actividades.css">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>Administración de Actividades</h1>
+
+        <form id="formActividad">
+
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Nombre"
+                required>
+
+            <textarea
+                type="text"
+                id="descripcion"
+                placeholder="Descripción"
+                required>
+            </textarea>
+
+            <input
+                type="text"
+                id="direccion"
+                placeholder="Dirección">
+
+            <input
+                type="text"
+                id="horario"
+                placeholder="Horario">
+
+            <input
+                type="text"
+                id="contacto"
+                 placeholder="Contacto">
+
+            <input
+                type="text"
+                id="costo"
+                placeholder="Costo">
+
+            <input
+                type="text"
+                id="imagen"
+                placeholder="URL de imagen">
+
+            <input
+                type="text"
+                id="maps_url"
+                placeholder="Link Google Maps">
+
+            <input
+                type="text"
+                id="categoria"
+                placeholder="Categoría">
+
+            <button type="submit">
+                Guardar Actividad
+            </button>
+
+        </form>
+
+        <hr>
+
+        <h2>Actividades Cargadas</h2>
+
+        <div id="listaActividades"></div>
+
+    </div>
+
+    <script src="/Frontend/js/admin-actividades.js"></script>
+
+</body>
+</html>
