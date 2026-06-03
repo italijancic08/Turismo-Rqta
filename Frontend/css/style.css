@@ -376,7 +376,7 @@ header{
 ======================================== */
 
 .prestador-banner{
-    background:#2E7D32;
+    background:#408a43;
     color:white;
 
     padding:80px 8%;
@@ -390,12 +390,96 @@ header{
    FOOTER
 ======================================== */
 
-footer{
-    background:#263238;
-    color:white;
+footer {
+    background: #ffffff;
+    color: white;
+    padding: 60px 20px 30px;
 
-    text-align:center;
-    padding:30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    text-align: center;
+}
+
+.footer-contacto h3 {
+    color:black;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-iconos {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.footer-iconos a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #2E7D32;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.2rem;
+    transition: .3s;
+}
+
+.footer-iconos a:hover {
+    background: #388E3C;
+    transform: translateY(-3px);
+}
+
+.footer-logo {
+    width: 220px;
+}
+
+.footer-copy {
+    font-size: .85rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-wave {
+    position: relative;
+    height: 80px;
+    background: transparent;
+    overflow: hidden;
+}
+
+.footer-wave div {
+    position: absolute;
+    width: 120%;
+    left: -10%;
+    height: 100%;
+}
+
+.wave-1 {
+    background: #a5d6a7;
+    transform: skewY(-2deg);
+    transform-origin: top left;
+    top: 0;
+}
+
+.wave-2 {
+    background: #66bb6a;
+    transform: skewY(-2.8deg);
+    transform-origin: top left;
+    top: 10px;
+}
+
+.wave-3 {
+    background: #2E7D32;
+    transform: skewY(-3.5deg);
+    transform-origin: top left;
+    top: 20px;
 }
 
 /* ========================================
