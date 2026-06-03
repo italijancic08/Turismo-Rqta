@@ -11,25 +11,13 @@ if (searchBtn && searchInput) {
 
     searchBtn.addEventListener("click", () => {
 
-        if (!abierto) {
+        abierto = !abierto;
 
-            searchInput.style.width = "220px";
-            searchInput.style.opacity = "1";
-            searchInput.style.padding = "10px 15px";
+        searchInput.style.width   = abierto ? "220px" : "0";
+        searchInput.style.opacity = abierto ? "1"     : "0";
+        searchInput.style.padding = abierto ? "10px 15px" : "10px 0";
 
-            searchInput.focus();
-
-            abierto = true;
-
-        } else {
-
-            searchInput.style.width = "0";
-            searchInput.style.opacity = "0";
-            searchInput.style.padding = "10px 0";
-
-            abierto = false;
-
-        }
+        if (abierto) searchInput.focus();
 
     });
 
@@ -39,85 +27,48 @@ if (searchBtn && searchInput) {
 // CARRUSEL EVENTOS
 // =========================
 
-const slider = document.querySelector(".slider");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-const slides = document.querySelectorAll(".slide");
+const slider   = document.querySelector(".slider");
+const nextBtn  = document.querySelector(".next");
+const prevBtn  = document.querySelector(".prev");
+const viewport = document.querySelector(".viewport");
+const slides   = document.querySelectorAll(".slide");
 
-if (slider && nextBtn && prevBtn && slides.length > 0) {
+if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
 
     let currentIndex = 0;
-   
 
-    nextBtn.addEventListener("click", () => {
-
-        const visibles = Math.floor(
-    document.querySelector(".viewport").offsetWidth /
-    slides[0].offsetWidth
-);
-
-const maxIndex = slides.length - visibles;
-
-        if (currentIndex < maxIndex) {
-
-            currentIndex++;
-
-           slider.style.transform =
-    `translateX(-${currentIndex * slides[0].offsetWidth}px)`;
-
-        }
-
-    });
-
-   prevBtn.addEventListener("click", () => {
-
-    if (currentIndex > 0) {
-
-        currentIndex--;
-
-        slider.style.transform =
-            `translateX(-${currentIndex * slides[0].offsetWidth}px)`;
-
+    function getMaxIndex() {
+        const visibles = Math.floor(viewport.offsetWidth / slides[0].offsetWidth);
+        return slides.length - visibles;
     }
 
-});
+    function goTo(index) {
+        currentIndex = index;
+        slider.style.transform = `translateX(-${currentIndex * slides[0].offsetWidth}px)`;
+    }
+
+    nextBtn.addEventListener("click", () => {
+        if (currentIndex < getMaxIndex()) goTo(currentIndex + 1);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) goTo(currentIndex - 1);
+    });
+
     setInterval(() => {
-
-        const visibles = Math.floor(
-    document.querySelector(".viewport").offsetWidth /
-    slides[0].offsetWidth
-);
-
-const maxIndex = slides.length - visibles;
-
-        if (currentIndex >= maxIndex) {
-            currentIndex = 0;
-        } else {
-            currentIndex++;
-        }
-
-        slider.style.transform =
-            `translateX(-${currentIndex * slideWidth}px)`;
-
+        const next = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
+        goTo(next);
     }, 4000);
 
 }
 
-// =========================
-// EXPLORAR
-// =========================
+const btnExplorar = document.querySelector('a[href="#categorias"]');
 
-/* const botonesExplorar = document.querySelectorAll(".btnExplorar");
-
-botonesExplorar.forEach(btn => {
-    btn.addEventListener("click", (e) => {
+if (btnExplorar) {
+    btnExplorar.addEventListener("click", (e) => {
         e.preventDefault();
-
-        const section = document.getElementById("categorias");
-
-        window.scrollTo({
-            top: section.offsetTop - 80,
+        document.getElementById("categorias").scrollIntoView({
             behavior: "smooth"
         });
     });
-}); */
+}
