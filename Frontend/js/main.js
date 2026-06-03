@@ -107,7 +107,7 @@ const maxIndex = slides.length - visibles;
 // EXPLORAR
 // =========================
 
-/* const botonesExplorar = document.querySelectorAll(".btnExplorar");
+ const botonesExplorar = document.querySelectorAll(".btnExplorar");
 
 botonesExplorar.forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -120,4 +120,4 @@ botonesExplorar.forEach(btn => {
             behavior: "smooth"
         });
     });
-}); */
+});

@@ -107,3 +107,36 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
 });
+
+const searchBtn = document.querySelector(".search-btn");
+const searchInput = document.querySelector(".search-input");
+
+if (searchBtn && searchInput) {
+
+    let abierto = false;
+
+    searchBtn.addEventListener("click", () => {
+
+        if (!abierto) {
+
+            searchInput.style.width = "220px";
+            searchInput.style.opacity = "1";
+            searchInput.style.padding = "10px 15px";
+
+            searchInput.focus();
+
+            abierto = true;
+
+        } else {
+
+            searchInput.style.width = "0";
+            searchInput.style.opacity = "0";
+            searchInput.style.padding = "10px 0";
+
+            abierto = false;
+
+        }
+
+    });
+
+}
