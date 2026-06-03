@@ -64,11 +64,13 @@ if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
 
 const btnExplorar = document.querySelector('a[href="#categorias"]');
 
-if (btnExplorar) {
-    btnExplorar.addEventListener("click", (e) => {
+ const botonesExplorar = document.querySelectorAll(".btnExplorar");
+
+botonesExplorar.forEach(btn => {
+    btn.addEventListener("click", (e) => {
         e.preventDefault();
         document.getElementById("categorias").scrollIntoView({
             behavior: "smooth"
         });
     });
-}
+});
