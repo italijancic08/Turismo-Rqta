@@ -180,6 +180,18 @@ Fecha 03/06/2026
 
 ---
 
+## v0.1.7 - Modificaciones de diseño
+
+Fecha 03/06/2026
+
+### Agregado
+
+* Modificacion slider eventos
+* Hero principal con movimiento
+* Mejoras de diseños simples
+
+---
+
 ### Cosas a hacer
 
 * Falta arreglar la navbar en que ver
@@ -229,4 +241,4 @@ Fecha: 03/06/2026
 
 Responsable: Bruno Virili
 
-Cambios realizados: v0.1.6
+Cambios realizados: v0.1.7
