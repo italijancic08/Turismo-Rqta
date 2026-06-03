@@ -227,6 +227,17 @@ Fecha 03/06/2026
 
 Fecha: 03/06/2026
 
-Responsable: Bruno Virili
+Responsables: Bruno Virili - Gabriel Oviedo
+### Agregado 
+## Actualización Responsive
+
+Se incorporó un menú hamburguesa para resoluciones menores a 992px.
+
+### Características
+* Apertura y cierre mediante JavaScript.
+* Menú desplegable a pantalla completa.
+*  Ocultamiento de elementos de escritorio en dispositivos móviles.
+* Adaptación del logo y buscador para mejorar el espacio disponible.
+* Cierre automático del menú al seleccionar una opción.
 
 Cambios realizados: v0.1.6
