@@ -1,40 +1,36 @@
-// =========================
+// ========================================
 // BUSCADOR
-// =========================
+// ========================================
 
 const searchBtn = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-input");
 
 if (searchBtn && searchInput) {
-
     let abierto = false;
 
     searchBtn.addEventListener("click", () => {
-
         abierto = !abierto;
 
-        searchInput.style.width   = abierto ? "220px" : "0";
-        searchInput.style.opacity = abierto ? "1"     : "0";
+        searchInput.style.width = abierto ? "220px" : "0";
+        searchInput.style.opacity = abierto ? "1" : "0";
         searchInput.style.padding = abierto ? "10px 15px" : "10px 0";
 
         if (abierto) searchInput.focus();
 
     });
-
 }
 
-// =========================
-// CARRUSEL EVENTOS
-// =========================
+// ========================================
+// CARRUSEL DE EVENTOS
+// ========================================
 
-const slider   = document.querySelector(".slider");
-const nextBtn  = document.querySelector(".next");
-const prevBtn  = document.querySelector(".prev");
+const slider = document.querySelector(".slider");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 const viewport = document.querySelector(".viewport");
-const slides   = document.querySelectorAll(".slide");
+const slides = document.querySelectorAll(".slide");
 
 if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
-
     let currentIndex = 0;
 
     function getMaxIndex() {
@@ -43,6 +39,7 @@ if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
     }
 
     function goTo(index) {
+
         currentIndex = index;
         slider.style.transform = `translateX(-${currentIndex * slides[0].offsetWidth}px)`;
     }
@@ -55,22 +52,38 @@ if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
         if (currentIndex > 0) goTo(currentIndex - 1);
     });
 
+    // Autoplay
+
     setInterval(() => {
         const next = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
         goTo(next);
+
     }, 4000);
 
 }
 
 const btnExplorar = document.querySelector('a[href="#categorias"]');
 
- const botonesExplorar = document.querySelectorAll(".btnExplorar");
-
-botonesExplorar.forEach(btn => {
-    btn.addEventListener("click", (e) => {
+if (btnExplorar) {
+    btnExplorar.addEventListener("click", (e) => {
         e.preventDefault();
         document.getElementById("categorias").scrollIntoView({
             behavior: "smooth"
         });
+
     });
-});
+}
+// ========================================
+// MENU HAMBURGUESA
+// ========================================
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+
+        hamburger.textContent =
+            navLinks.classList.contains("active") ? "✕" : "☰";
+    });
+}

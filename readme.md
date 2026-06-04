@@ -167,6 +167,19 @@ Fecha: 02/06/2026
 
 ---
 
+## v0.1.6 - Modificación en index principal
+
+Fecha 03/06/2026
+
+### Agregado
+
+* Nuevo estilo de cartas
+* Nuevo estilo de footer
+* Nueva pestaña de teléfonos útiles
+* Cambios generales en diseño
+
+---
+
 ### Cosas a hacer
 
 * Falta arreglar la navbar en que ver
@@ -179,14 +192,14 @@ Fecha: 02/06/2026
 
 ## Frontend
 * ☑ Home
-* ☐ Hero principal
+* ☑ Hero principal
 * ☐ Navbar responsive
 * ☐ Buscador
-* ☐ Qué Hacer
+* ☑ Qué Hacer
 * ☐ Alojamientos
 * ☐ Gastronomía
 * ☐ Prestadores
-* ☐ Footer
+* ☑ Footer
 
 ## Backend
 
@@ -212,8 +225,19 @@ Fecha: 02/06/2026
 
 # Última Actualización
 
-Fecha: 02/06/2026
+Fecha: 03/06/2026
 
-Responsable: Valentino Rivas
+Responsables: Bruno Virili - Gabriel Oviedo
+### Agregado 
+## Actualización Responsive
 
-Cambios realizados: v0.1.5
+Se incorporó un menú hamburguesa para resoluciones menores a 992px.
+
+### Características
+* Apertura y cierre mediante JavaScript.
+* Menú desplegable a pantalla completa.
+*  Ocultamiento de elementos de escritorio en dispositivos móviles.
+* Adaptación del logo y buscador para mejorar el espacio disponible.
+* Cierre automático del menú al seleccionar una opción.
+
+Cambios realizados: v0.1.6
