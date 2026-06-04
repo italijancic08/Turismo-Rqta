@@ -822,15 +822,15 @@ header::after{
         margin-left:auto;
         margin-right:50px; /* deja lugar para la hamburguesa */
     }
-    @media (max-width:992px){
+   
 
     .search-input{
         right:45px;
         max-width:120px;
-    }
+    
 
-    }
-    @media (max-width:992px){
+    
+   
 
     .search-btn{
         width:40px;
