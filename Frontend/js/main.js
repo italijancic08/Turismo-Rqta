@@ -87,3 +87,61 @@ if (hamburger && navLinks) {
             navLinks.classList.contains("active") ? "✕" : "☰";
     });
 }
+
+// ========================================
+// HERO SLIDER
+// ========================================
+
+const bg1 = document.querySelector(".bg1");
+const bg2 = document.querySelector(".bg2");
+const dots = document.querySelectorAll(".dot");
+
+if (bg1 && bg2 && dots.length > 0) {
+
+    const images = [
+        "assets/slide1.jpg",
+        "assets/slide2.jpg",
+        "assets/slide3.jpg",
+        "assets/slide4.jpg",
+        "assets/slide5.jpg"
+    ];
+
+    let current = 0;
+    let activeBg = bg1;
+
+    bg1.style.backgroundImage = `url('${images[0]}')`;
+    bg1.style.opacity = "1";
+
+    function showSlide(index) {
+
+        const nextBg = activeBg === bg1 ? bg2 : bg1;
+
+        nextBg.style.backgroundImage = `url('${images[index]}')`;
+        nextBg.style.opacity = "1";
+
+        activeBg.style.opacity = "0";
+
+        activeBg = nextBg;
+
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    setInterval(() => {
+
+        current = (current + 1) % images.length;
+        showSlide(current);
+
+    }, 5000);
+
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            current = index;
+            showSlide(current);
+
+        });
+
+    });
+}

@@ -261,57 +261,90 @@ header::after{
 
 .hero{
     position:relative;
-    z-index:10;
-
     height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
+    overflow:hidden;
+    color:white;
+}
+
+.hero-background{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    z-index:1;
+}
+
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    transition:opacity 1.5s ease;
+}
+
+.bg1{
+    opacity:1;
+    z-index:1;
+}
+
+.bg2{
+    opacity:0;
+    z-index:1;
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:2;
 }
 
 .hero-content{
-    color:white;
-    max-width:700px;
+    position:relative;
+    z-index:3;
+    max-width:800px;
+    padding:0 20px;
 }
 
-.hero h1{
-    color:white;
+.hero-content h1{
     font-size:4rem;
     margin-bottom:20px;
 }
 
-.hero p{
-    color:white;
-    font-size:1.2rem;
+.hero-content p{
+    font-size:1.3rem;
 }
 
 .hero-dots{
     position:absolute;
-    bottom:30px;
+    bottom:40px;
     left:50%;
     transform:translateX(-50%);
-
     display:flex;
-    gap:10px;
-
-    z-index:20;
+    gap:12px;
+    z-index:3;
 }
 
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255,255,255,.4);
-    cursor: pointer;
-    transition: background .3s, transform .3s;
+.dot{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:rgba(255,255,255,.5);
+    cursor:pointer;
+    transition:.3s;
 }
 
-.dot.active {
-    background: #2E7D32;
-    transform: scale(1.3);
+.dot.active{
+    background:white;
+    transform:scale(1.2);
 }
 
 /* ========================================
@@ -457,6 +490,7 @@ header::after{
     box-shadow: 0 10px 25px rgba(0,0,0,.08);
     transition:.3s;
     height: 280px;
+    width: auto;
 }
 
 .card:hover{
@@ -754,18 +788,87 @@ header::after{
     height:100%;
 }
 
-.wave-1{
-    background:#a5d6a7;
-    transform:skewY(-2deg);
-    transform-origin:top left;
-    top:0;
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: white;
+    color: #263238;
+    padding: 60px 20px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    text-align: center;
 }
 
-.wave-2{
-    background:#66bb6a;
-    transform:skewY(-2.8deg);
-    transform-origin:top left;
-    top:10px;
+.footer-contacto h3 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #063802;
+    margin: 0 0 16px;
+}
+
+.footer-iconos {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer-iconos a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid #2E7D32;
+    background: #2E7D32;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+
+.footer-iconos a:hover {
+    background: #2E7D32;
+    color: white;
+}
+
+.footer-divider {
+    width: 50px;
+    height: 2px;
+    background: #2E7D32;
+    border-radius: 2px;
+    opacity: 0.4;
+}
+
+.footer-logo img {
+    width: 200px;
+    display: block;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: #aaa;
+    margin: 0;
+}
+
+.wave-1 {
+    background: #a5d6a7;
+    transform: skewY(-2deg);
+    transform-origin: top left;
+    top: 0;
+}
+
+.wave-2 {
+    background: #66bb6a;
+    transform: skewY(-2.8deg);
+    transform-origin: top left;
+    top: 10px;
 }
 
 .wave-3 {
@@ -775,10 +878,9 @@ header::after{
     top: 20px;
 }
 
-
-.menu-toggle{
-    position:relative;
-    z-index:1001;
+.menu-toggle {
+    position: relative;
+    z-index: 1001;
 }
     
 
@@ -927,6 +1029,78 @@ header::after{
         height:180px;
     }
 
+}
+
+/* =========================
+   SECCIONES DESTACADAS
+========================= */
+
+.feature-section{
+    height:70vh;
+    position:relative;
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    margin:16px 0;
+    border-top:16px solid #fff;
+}
+
+.feature-section:last-of-type{
+    border-bottom:16px solid #fff;
+}
+
+.feature-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.55);
+}
+
+.feature-overlay{
+    position:relative;
+    z-index:2;
+    color:white;
+    max-width:900px;
+    padding:20px;
+}
+
+.feature-overlay h2{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.feature-overlay p{
+    font-size:1.3rem;
+    margin-bottom:30px;
+}
+
+.feature-btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#39b54a;
+    color:white;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.gastronomia{
+    background-image:url(https://carnesargentinas.es/wp-content/uploads/2023/06/Las-9-comidas-argentinas-m%C3%A1s-sabrosas.jpg);
+}
+
+.naturaleza{
+    background-image:url("https://tse1.mm.bing.net/th/id/OIP.u-u8poGnQyBKqovutrRIGAHaE2?r=0&rs=1&pid=ImgDetMain&o=7&rm=3");
+}
+
+.pesca{
+    background-image:url("https://www.turismoentrerios.com/util/v2017/img/pesca.jpg");
 }
 
 
