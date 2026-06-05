@@ -78,14 +78,27 @@ if (btnExplorar) {
 // ========================================
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
+const menuOverlay = document.getElementById("menuOverlay");
 
-if (hamburger && navLinks) {
+if (hamburger && navLinks && menuOverlay) {
+
     hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-
-        hamburger.textContent =
-            navLinks.classList.contains("active") ? "✕" : "☰";
+        navLinks.classList.add("active");
+        menuOverlay.classList.add("active");
     });
+
+    menuOverlay.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuOverlay.classList.remove("active");
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            menuOverlay.classList.remove("active");
+        });
+    });
+
 }
 
 // ========================================

@@ -752,23 +752,6 @@ header::after{
     opacity: .7;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .prestador-banner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .prestador-banner-texto h2 {
-        font-size: 1.6rem;
-    }
-
-    .prestador-banner-accion {
-        width: 100%;
-    }
-}
-
-
 /* ========================================
    FOOTER WAVE
 ======================================== */
@@ -885,69 +868,48 @@ footer {
     
 
 /* ========================================
-   RESPONSIVE
+RESPONSIVE
 ======================================== */
 
-@media(max-width:1000px){
 
-    .cards-grid{
-        grid-template-columns:repeat(2,1fr);
+
+@media (max-width: 992px){
+    
+    body{
+        overflow-x: hidden;
     }
 
-    .viewport{
-        width:600px;
-    }
-
-}
-.menu-toggle{
-    display:none;
-}
-
-.hamburger{
-    display:none;
-}
-.btn-admin-mobile{
-    display: inline-block;
-}
-
-.mobile-prestador{
-    display:none;
-}
-
- @media (max-width: 992px){
-    
-    
     .mobile-prestador{
     display:block;
+    border-bottom: none !important;
+    padding-bottom: 0;
+    margin-bottom: 0;
     }
 
     .search-container{
         margin-left:auto;
-        margin-right:50px; /* deja lugar para la hamburguesa */
-    }
-   
+        margin-right:5px;
+    }  
 
     .search-input{
-        right:45px;
-        max-width:120px;
-    
-
-    
-   
-
+        right:42px;
+        max-width:150px; 
+        top : -20px;
+    }
     .search-btn{
         width:40px;
         height:40px;
+        top: -22px;
     }
 
-    }
-    
     .btn-admin-mobile{
         background:#2E7D32;
         color:white;
+        width:100%;
         padding:12px 25px;
         border-radius:30px;
         display:inline-block;
+        text-align:center;
     }
 
     .mobile-prestador a{
@@ -970,97 +932,151 @@ footer {
         background:none;
         border:none;
         color:white;
-        font-size:2rem;
+        font-size:1.8rem;
         cursor: pointer;
     }
 
     .navbar{
-       display: flex;
-       align-items: center;
+    display:flex;
+    align-items:center;
     }
 
     
 
     .nav-links{
-        position:fixed;
-        top:0;
-        left:-85%;
-        font-size: 30px;
-        width:85%;
-        height:100vh;
-        max-width: 300px;
-        
+    position:fixed;
+    top:0;
+    left:0;
 
-        margin:0;
-        padding:80px 30px 30px;
-        background:rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+    width:85%;
+    max-width:320px;
+    height:100vh;
 
-        list-style: none;
-        display:flex;
-        flex-direction:column;
-        justify-content:flex-start;
-        align-items:flex-start;
+    padding:15px 25px 25px;
 
-        gap:25px;
+    background:rgba(12,17,29,.95);
+    transform: translateX(-100%);
+    transition:
+        transform .45s cubic-bezier(0.22, 1, 0.36, 1), opacity .35s ease;
+    will-change: transform;
 
-        transform:none;
+    display:flex;
+    flex-direction:column;
+    z-index:1500;
 
-        transition:left .3s ease;
-
-        z-index:1500;
-        box-shadow: 5px 0 20px rgba(0, 0, 0, .15);
+    box-shadow:8px 0 30px rgba(0,0,0,.35);
     }
 
     .nav-links li{
         width: 100%;
         margin-left: 0;
-        padding: 15px 0;
+        padding:10px 0;
         border-bottom: 1px solid #eee;
     }
 
     .nav-links.active{
-        left:0;
+        opacity:1;
+        transform: translateX(0);
         
     }
     .nav-links a:active{
         color: white;
         background-color: rgba(0, 0, 0, 0.2);
     }
-    .logo{
-        width: 180px;
+    .menu-logo{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:flex-start;
+
+    margin:0;
+    padding:0 0 15px 0;
+
+    border:none !important;
+}
+
+    .menu-logo img{
+    width:145px;
+    position:relative;
+    top:-3px;
     }
 
     .nav-links li a{
-        color: #222 !important;
-        font-weight: 500;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        text-decoration: none;
+    color:white !important;
+    font-size:1.15rem;
+    font-weight:600;
+    letter-spacing:1px;
+    transition:.25s;
+    }
 
+    .menu-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.55);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition: opacity .4s ease;
+
+    z-index:1400;
 }
 
-@media(max-width:700px){
+.menu-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+.logo{
+    margin-left: 70px;
 
-    .cards-grid{
-        grid-template-columns:1fr;
-    }
-
-    .viewport{
-        width:300px;
-    }
-
-    .banner-card{
-        height:180px;
-    }
-
- 
+}
+.logo img{
+    width: 160px;
+    margin-left: 0;
     
-    
- 
+}
+.categorias{
+    padding:30px 0 50px;
 
+}
+.titulo-seccion::before,.titulo-seccion::after{
+    display:none;
+    }
+
+.titulo-seccion{
+    display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+
+        text-align:center;
+
+        font-size:2.2rem;
+        gap:5px;
+        margin-bottom:30px;
+        padding:20px;
+}
+
+.cards-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+    padding:0 20px;
+    margin-top:30px;
+}
+.card{
+    height:auto;
+    border-radius:16px;
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+}
 
 /* =========================
    SECCIONES DESTACADAS
@@ -1133,4 +1149,3 @@ footer {
 .pesca{
     background-image:url("https://www.turismoentrerios.com/util/v2017/img/pesca.jpg");
 }
-}}
