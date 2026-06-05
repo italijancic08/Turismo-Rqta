@@ -871,6 +871,15 @@ footer {
 RESPONSIVE
 ======================================== */
 
+.menu-logo{
+    display:none;
+}
+.hamburger{
+    display:none;
+}
+.mobile-prestador{
+    display:none;
+}
 
 
 @media (max-width: 992px){
