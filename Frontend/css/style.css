@@ -570,30 +570,63 @@ header::after{
     justify-content:center;
     align-items:center;
     gap:30px;
+
+    position:relative;
+    padding:30px;
+    border-radius:30px;
+}
+
+/* Fade lateral para ocultar cortes de sombra */
+.slider-wrapper::before,
+.slider-wrapper::after{
+    content:"";
+    position:absolute;
+    top:0;
+    bottom:0;
+    width:40px;
+    z-index:5;
+    pointer-events:none;
+}
+
+.slider-wrapper::before{
+    left:90px;
+    background:linear-gradient(
+        to right,
+        #f8faf8,
+        transparent
+    );
+}
+
+.slider-wrapper::after{
+    right:90px;
+    background:linear-gradient(
+        to left,
+        #f8faf8,
+        transparent
+    );
 }
 
 .viewport{
-    width:900px;
+    width:1000px;
     overflow:hidden;
-    overflow:hidden;
-    padding:20px 10px;
+    padding:25px 15px;
 }
 
-
 .slider{
-    transition:
-    transform .8s cubic-bezier(
-        0.22,
-        1,
-        0.36,
-        1
-    );
     display:flex;
     gap:50px;
+
+    transition:
+        transform .8s cubic-bezier(
+            0.22,
+            1,
+            0.36,
+            1
+        );
 }
 
 .slide{
-    flex:0 0 260px;
+    flex:0 0 290px;
 
     display:flex;
     justify-content:center;
@@ -604,7 +637,7 @@ header::after{
     background:white;
     border-radius:24px;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
 
     transition:.35s ease;
 }
@@ -629,9 +662,8 @@ header::after{
     transition:.3s;
 }
 
-
-.slide img:hover{
-    transform:scale(1.05);
+.slide:hover img{
+    transform:scale(1.08);
 }
 
 .slider-btn{
@@ -656,20 +688,6 @@ header::after{
     background:#2E7D32;
     color:white;
     transform:scale(1.1);
-}
-
-.slide:hover img{
-    transform:scale(1.08);
-}
-
-.slider-wrapper{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:30px;
-
-    padding:30px;
-    border-radius:30px;
 }
 
 /* ========================================
@@ -871,16 +889,16 @@ footer {
 RESPONSIVE
 ======================================== */
 
-.menu-logo{
-    display:none;
-}
+
 .hamburger{
-    display:none;
+    display: none;
 }
 .mobile-prestador{
-    display:none;
+    display: none;
 }
-
+.menu-logo{
+    display: none;
+}
 
 @media (max-width: 992px){
     
@@ -889,10 +907,11 @@ RESPONSIVE
     }
 
     .mobile-prestador{
-    display:block;
-    border-bottom: none !important;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    background: #2E7D32;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    margin-left: 10px;
     }
 
     .search-container{
@@ -911,16 +930,6 @@ RESPONSIVE
         top: -22px;
     }
 
-    .btn-admin-mobile{
-        background:#2E7D32;
-        color:white;
-        width:100%;
-        padding:12px 25px;
-        border-radius:30px;
-        display:inline-block;
-        text-align:center;
-    }
-
     .mobile-prestador a{
     color:white;
     font-weight:600;
@@ -932,66 +941,11 @@ RESPONSIVE
     }
 
 
-    .hamburger{
-        display:block;
-        position:fixed;
-        top:15px;
-        left: 15px;
-        z-index:9999;
-        background:none;
-        border:none;
-        color:white;
-        font-size:1.8rem;
-        cursor: pointer;
-    }
-
     .navbar{
     display:flex;
     align-items:center;
     }
 
-    
-
-    .nav-links{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:85%;
-    max-width:320px;
-    height:100vh;
-
-    padding:15px 25px 25px;
-
-    background:rgba(12,17,29,.95);
-    transform: translateX(-100%);
-    transition:
-        transform .45s cubic-bezier(0.22, 1, 0.36, 1), opacity .35s ease;
-    will-change: transform;
-
-    display:flex;
-    flex-direction:column;
-    z-index:1500;
-
-    box-shadow:8px 0 30px rgba(0,0,0,.35);
-    }
-
-    .nav-links li{
-        width: 100%;
-        margin-left: 0;
-        padding:10px 0;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-links.active{
-        opacity:1;
-        transform: translateX(0);
-        
-    }
-    .nav-links a:active{
-        color: white;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
     .menu-logo{
     width:100%;
     display:flex;
@@ -1017,6 +971,15 @@ RESPONSIVE
     letter-spacing:1px;
     transition:.25s;
     }
+
+    .nav-links.active{
+        left:0;
+    }
+    .logo{
+        width: 180px;
+    }
+
+}
 
     .menu-overlay{
     position:fixed;
@@ -1085,7 +1048,7 @@ RESPONSIVE
     height:200px;
     object-fit:cover;
 }
-}
+
 
 /* =========================
    SECCIONES DESTACADAS
@@ -1158,3 +1121,11 @@ RESPONSIVE
 .pesca{
     background-image:url("https://www.turismoentrerios.com/util/v2017/img/pesca.jpg");
 }
+
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+

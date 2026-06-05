@@ -182,7 +182,7 @@ Fecha 03/06/2026
 
 ## v0.1.7 - Modificaciones de diseño
 
-Fecha 03/06/2026
+Fecha 04/06/2026
 
 ### Agregado
 
@@ -192,11 +192,15 @@ Fecha 03/06/2026
 
 ---
 
-### Cosas a hacer
+## v0.1.8 - Arreglo de bugs en slider y adaptacion para celulares
 
-* Falta arreglar la navbar en que ver
-* Falta agregar un fondo detras de las cards
-* Falta acomodar el tamaño de los popups
+Fecha 05/06/2026
+
+### Agregado
+
+* Slider eventos arreglado
+* Adaptacion completa de index para celulares
+* Menu desplegable tipo hamburguesa
 
 ---
 
@@ -237,19 +241,15 @@ Fecha 03/06/2026
 
 # Última Actualización
 
-Fecha: 03/06/2026
+Fecha: 05/06/2026
 
-Responsables: Bruno Virili - Gabriel Oviedo
-### Agregado 
-## Actualización Responsive
+Responsables: Valentino Rivas
 
-Se incorporó un menú hamburguesa para resoluciones menores a 992px.
+### Agregado
+* Slider eventos arreglado
+* Adaptacion completa de index para celulares
+* Menu desplegable tipo hamburguesa
 
-### Características
-* Apertura y cierre mediante JavaScript.
-* Menú desplegable a pantalla completa.
-*  Ocultamiento de elementos de escritorio en dispositivos móviles.
-* Adaptación del logo y buscador para mejorar el espacio disponible.
-* Cierre automático del menú al seleccionar una opción.
 
-Cambios realizados: v0.1.7
+
+Cambios realizados: v0.1.8

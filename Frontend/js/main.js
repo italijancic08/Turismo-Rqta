@@ -1,14 +1,16 @@
-// ========================================
+// =========================
 // BUSCADOR
-// ========================================
+// =========================
 
 const searchBtn = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-input");
 
 if (searchBtn && searchInput) {
+
     let abierto = false;
 
     searchBtn.addEventListener("click", () => {
+
         abierto = !abierto;
 
         searchInput.style.width = abierto ? "220px" : "0";
@@ -16,13 +18,13 @@ if (searchBtn && searchInput) {
         searchInput.style.padding = abierto ? "10px 15px" : "10px 0";
 
         if (abierto) searchInput.focus();
-
     });
+
 }
 
-// ========================================
-// CARRUSEL DE EVENTOS
-// ========================================
+// =========================
+// CARRUSEL EVENTOS
+// =========================
 
 const slider = document.querySelector(".slider");
 const nextBtn = document.querySelector(".next");
@@ -31,130 +33,119 @@ const viewport = document.querySelector(".viewport");
 const slides = document.querySelectorAll(".slide");
 
 if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
+
     let currentIndex = 0;
 
     function getMaxIndex() {
-        const visibles = Math.floor(viewport.offsetWidth / slides[0].offsetWidth);
-        return slides.length - visibles;
+        const visibles = Math.floor(
+            viewport.offsetWidth / slides[0].offsetWidth
+        );
+        return Math.max(0, slides.length - visibles);
     }
 
     function goTo(index) {
-
         currentIndex = index;
-        slider.style.transform = `translateX(-${currentIndex * slides[0].offsetWidth}px)`;
+        slider.style.transform = `translateX(-${
+            currentIndex * slides[0].offsetWidth
+        }px)`;
     }
 
     nextBtn.addEventListener("click", () => {
-        if (currentIndex < getMaxIndex()) goTo(currentIndex + 1);
+        if (currentIndex < getMaxIndex()) {
+            goTo(currentIndex + 1);
+        }
     });
 
     prevBtn.addEventListener("click", () => {
-        if (currentIndex > 0) goTo(currentIndex - 1);
+        if (currentIndex > 0) {
+            goTo(currentIndex - 1);
+        }
     });
-
-    // Autoplay
 
     setInterval(() => {
-        const next = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
+        const next = currentIndex >= getMaxIndex()
+            ? 0
+            : currentIndex + 1;
+
         goTo(next);
-
     }, 4000);
-
 }
 
-const btnExplorar = document.querySelector('a[href="#categorias"]');
+// =========================
+// BOTONES EXPLORAR
+// =========================
 
-if (btnExplorar) {
-    btnExplorar.addEventListener("click", (e) => {
+const botonesExplorar = document.querySelectorAll(".btnExplorar");
+
+botonesExplorar.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
         e.preventDefault();
-        document.getElementById("categorias").scrollIntoView({
-            behavior: "smooth"
-        });
 
+        const categorias = document.getElementById("categorias");
+
+        if (categorias) {
+            categorias.scrollIntoView({
+                behavior: "smooth"
+            });
+        }
     });
-}
-// ========================================
-// MENU HAMBURGUESA
-// ========================================
-const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("navLinks");
-const menuOverlay = document.getElementById("menuOverlay");
+});
 
-if (hamburger && navLinks && menuOverlay) {
 
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.add("active");
-        menuOverlay.classList.add("active");
-    });
+/* const menuToggle = document.querySelector(".menu-toggle");
+const sideMenu = document.querySelector(".side-menu");
+const overlay = document.querySelector(".overlay");
+const closeMenu = document.querySelector(".close-menu");
 
-    menuOverlay.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        menuOverlay.classList.remove("active");
-    });
+if (menuToggle && sideMenu && overlay && closeMenu) {
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("active");
-            menuOverlay.classList.remove("active");
-        });
+    menuToggle.addEventListener("click", () => {
+        sideMenu.classList.add("active");
+        overlay.classList.add("active");
     });
 
-}
-
-// ========================================
-// HERO SLIDER
-// ========================================
-
-const bg1 = document.querySelector(".bg1");
-const bg2 = document.querySelector(".bg2");
-const dots = document.querySelectorAll(".dot");
-
-if (bg1 && bg2 && dots.length > 0) {
-
-    const images = [
-        "assets/slide1.jpg",
-        "assets/slide2.jpg",
-        "assets/slide3.jpg",
-        "assets/slide4.jpg",
-        "assets/slide5.jpg"
-    ];
-
-    let current = 0;
-    let activeBg = bg1;
-
-    bg1.style.backgroundImage = `url('${images[0]}')`;
-    bg1.style.opacity = "1";
-
-    function showSlide(index) {
-
-        const nextBg = activeBg === bg1 ? bg2 : bg1;
-
-        nextBg.style.backgroundImage = `url('${images[index]}')`;
-        nextBg.style.opacity = "1";
-
-        activeBg.style.opacity = "0";
-
-        activeBg = nextBg;
-
-        dots.forEach(dot => dot.classList.remove("active"));
-        dots[index].classList.add("active");
+    function closeMenuFn() {
+        sideMenu.classList.remove("active");
+        overlay.classList.remove("active");
     }
 
-    setInterval(() => {
+    closeMenu.addEventListener("click", closeMenuFn);
+    overlay.addEventListener("click", closeMenuFn);
+} */
 
-        current = (current + 1) % images.length;
-        showSlide(current);
+/* function closeMenuFn(){
+    sideMenu.classList.remove("active");
+    overlay.classList.remove("active");
+} */
 
-    }, 5000);
+/* closeMenu.addEventListener("click", closeMenuFn);
+overlay.addEventListener("click", closeMenuFn);
+ */
+// Menú hamburguesa
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
 
-    dots.forEach((dot, index) => {
+if (hamburger && navLinks) {
 
-        dot.addEventListener("click", () => {
+    hamburger.addEventListener("click", () => {
 
-            current = index;
-            showSlide(current);
+        navLinks.classList.toggle("active");
 
-        });
+        if (navLinks.classList.contains("active")) {
+            hamburger.innerHTML = "✕";
+        } else {
+            hamburger.innerHTML = "☰";
+        }
 
     });
+
+    const menuLinks = document.querySelectorAll("#navLinks a");
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            hamburger.innerHTML = "☰";
+        });
+    });
+
 }
