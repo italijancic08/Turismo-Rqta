@@ -895,9 +895,6 @@ RESPONSIVE
 .hamburger{
     display:none;
 }
-.mobile-prestador{
-    display:none;
-}
 
 
 @media (max-width: 992px){
@@ -907,10 +904,11 @@ RESPONSIVE
     }
 
     .mobile-prestador{
-    display:block;
-    border-bottom: none !important;
-    padding-bottom: 0;
-    margin-bottom: 0;
+    background: #2E7D32;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    margin-left: 10px;
     }
 
     .search-container{
@@ -929,16 +927,6 @@ RESPONSIVE
         top: -22px;
     }
 
-    .btn-admin-mobile{
-        background:#2E7D32;
-        color:white;
-        width:100%;
-        padding:12px 25px;
-        border-radius:30px;
-        display:inline-block;
-        text-align:center;
-    }
-
     .mobile-prestador a{
     color:white;
     font-weight:600;
@@ -950,66 +938,11 @@ RESPONSIVE
     }
 
 
-    .hamburger{
-        display:block;
-        position:fixed;
-        top:15px;
-        left: 15px;
-        z-index:9999;
-        background:none;
-        border:none;
-        color:white;
-        font-size:1.8rem;
-        cursor: pointer;
-    }
-
     .navbar{
     display:flex;
     align-items:center;
     }
 
-    
-
-    .nav-links{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:85%;
-    max-width:320px;
-    height:100vh;
-
-    padding:15px 25px 25px;
-
-    background:rgba(12,17,29,.95);
-    transform: translateX(-100%);
-    transition:
-        transform .45s cubic-bezier(0.22, 1, 0.36, 1), opacity .35s ease;
-    will-change: transform;
-
-    display:flex;
-    flex-direction:column;
-    z-index:1500;
-
-    box-shadow:8px 0 30px rgba(0,0,0,.35);
-    }
-
-    .nav-links li{
-        width: 100%;
-        margin-left: 0;
-        padding:10px 0;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-links.active{
-        opacity:1;
-        transform: translateX(0);
-        
-    }
-    .nav-links a:active{
-        color: white;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
     .menu-logo{
     width:100%;
     display:flex;
@@ -1045,135 +978,22 @@ RESPONSIVE
 
 }
 
-.mobile-logo{
-    display:none;
+@media(max-width:700px){
+
+    .cards-grid{
+        grid-template-columns:1fr;
+    }
+
+    .viewport{
+        width:300px;
+    }
+
+    .banner-card{
+        height:180px;
+    }
+
 }
 
-@media (max-width: 992px){
-
-    /* Barra superior */
-
-    .navbar{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-
-        padding:15px 20px;
-    }
-
-    /* Ocultar logo superior */
-
-    .logo{
-        display:none;
-    }
-
-    /* Hamburguesa izquierda */
-
-    .hamburger{
-        display:block;
-
-        position:fixed;
-        left:20px;
-        top:15px;
-
-        right:auto;
-
-        z-index:9999;
-
-        background:none;
-        border:none;
-
-        color:white;
-        font-size:2rem;
-        cursor:pointer;
-    }
-
-    /* Buscador derecha */
-
-    .search-container{
-        margin-left:auto;
-        margin-right:0;
-    }
-
-    .search-btn{
-        width:42px;
-        height:42px;
-    }
-
-    /* Menú */
-
-    .nav-links{
-        position:fixed;
-
-        top:0;
-        left:-100%;
-
-        width:85%;
-        max-width:350px;
-        height:100vh;
-
-        background:#111;
-
-        display:flex;
-        flex-direction:column;
-
-        justify-content:flex-start;
-        align-items:center;
-
-        gap:24px;
-
-        padding:40px 20px;
-
-        transition:left .3s ease;
-
-        z-index:1500;
-
-        transform:none;
-    }
-
-    .nav-links.active{
-        left:0;
-    }
-
-    /* Logo dentro del menú */
-
-    .mobile-logo{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    width:100%;
-
-    padding:20px 0 30px;
-    margin-bottom:15px;
-
-    border-bottom:1px solid rgba(255,255,255,.12);
-}
-
-.mobile-logo img{
-    width:200px;
-    max-width:80%;
-    height:auto;
-}
-
-    .nav-links li{
-        width:100%;
-        text-align:center;
-    }
-
-    .nav-links a{
-        font-size:1.1rem;
-    }
-
-    .mobile-prestador{
-        display:block;
-        margin-top:20px;
-    }
-
-    .btn-admin{
-        display:none;
-    }
-}
 
 /* =========================
    SECCIONES DESTACADAS
@@ -1246,6 +1066,8 @@ RESPONSIVE
 .pesca{
     background-image:url("https://www.turismoentrerios.com/util/v2017/img/pesca.jpg");
 }
+
+
 
 /* ========================================
    MOBILE
@@ -1546,3 +1368,4 @@ RESPONSIVE
         height:42px;
     }
 }
+

@@ -86,7 +86,7 @@ if (hamburger && navLinks && menuOverlay) {
 
     hamburger.addEventListener("click", () => {
         navLinks.classList.add("active");
-        menuOverlay.classList.add("active");
+        menuOverlay.classList.add("active");git
     });
 
     menuOverlay.addEventListener("click", () => {
