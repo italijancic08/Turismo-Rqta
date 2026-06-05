@@ -31,48 +31,50 @@ const viewport = document.querySelector(".viewport");
 const slides = document.querySelectorAll(".slide");
 
 if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
+
     let currentIndex = 0;
 
+    function getStep() {
+        const gap = parseInt(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap);
+        return slides[0].offsetWidth + gap;
+    }
+
     function getMaxIndex() {
-        const visibles = Math.floor(viewport.offsetWidth / slides[0].offsetWidth);
+        const step = getStep();
+        const visibles = Math.floor(
+            (viewport.offsetWidth + parseInt(getComputedStyle(slider).gap))
+            / step
+        );
+
         return slides.length - visibles;
     }
 
     function goTo(index) {
-
         currentIndex = index;
-        slider.style.transform = `translateX(-${currentIndex * slides[0].offsetWidth}px)`;
+        slider.style.transform = `translateX(-${currentIndex * getStep()}px)`;
     }
 
     nextBtn.addEventListener("click", () => {
-        if (currentIndex < getMaxIndex()) goTo(currentIndex + 1);
+        if (currentIndex < getMaxIndex()) {
+            goTo(currentIndex + 1);
+        }
     });
 
     prevBtn.addEventListener("click", () => {
-        if (currentIndex > 0) goTo(currentIndex - 1);
+        if (currentIndex > 0) {
+            goTo(currentIndex - 1);
+        }
     });
-
-    // Autoplay
 
     setInterval(() => {
-        const next = currentIndex >= getMaxIndex() ? 0 : currentIndex + 1;
+        const next = currentIndex >= getMaxIndex()
+            ? 0
+            : currentIndex + 1;
+
         goTo(next);
-
     }, 4000);
-
 }
 
-const btnExplorar = document.querySelector('a[href="#categorias"]');
-
-if (btnExplorar) {
-    btnExplorar.addEventListener("click", (e) => {
-        e.preventDefault();
-        document.getElementById("categorias").scrollIntoView({
-            behavior: "smooth"
-        });
-
-    });
-}
 // ========================================
 // MENU HAMBURGUESA
 // ========================================
