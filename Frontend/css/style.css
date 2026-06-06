@@ -899,281 +899,303 @@ RESPONSIVE
     display:none;
 }
 
-
-@media (max-width: 992px){
-    
-    body{
-        overflow-x: hidden;
-    }
-
-    .mobile-prestador{
-    display:block;
-    border-bottom: none !important;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    }
-
-    .search-container{
-        margin-left:auto;
-        margin-right:5px;
-    }  
-
-    .search-input{
-        right:42px;
-        max-width:150px; 
-        top : -20px;
-    }
-    .search-btn{
-        width:40px;
-        height:40px;
-        top: -22px;
-    }
-
-    .btn-admin-mobile{
-        background:#2E7D32;
-        color:white;
-        width:100%;
-        padding:12px 25px;
-        border-radius:30px;
-        display:inline-block;
-        text-align:center;
-    }
-
-    .mobile-prestador a{
-    color:white;
-    font-weight:600;
-    font-size:1.1rem;
-    }
-
-    .btn-admin{
-        display:none;
-    }
-
-
-    .hamburger{
-        display:block;
-        position:fixed;
-        top:15px;
-        left: 15px;
-        z-index:9999;
-        background:none;
-        border:none;
-        color:white;
-        font-size:1.8rem;
-        cursor: pointer;
-    }
-
-    .navbar{
-    display:flex;
-    align-items:center;
-    }
-
-    
-
-    .nav-links{
-    position:fixed;
-    top:0;
-    left:0;
-
-    width:85%;
-    max-width:320px;
-    height:100vh;
-
-    padding:15px 25px 25px;
-
-    background:rgba(12,17,29,.95);
-    transform: translateX(-100%);
-    transition:
-        transform .45s cubic-bezier(0.22, 1, 0.36, 1), opacity .35s ease;
-    will-change: transform;
-
-    display:flex;
-    flex-direction:column;
-    z-index:1500;
-
-    box-shadow:8px 0 30px rgba(0,0,0,.35);
-    }
-
-    .nav-links li{
-        width: 100%;
-        margin-left: 0;
-        padding:10px 0;
-        border-bottom: 1px solid #eee;
-    }
-
-    .nav-links.active{
-        opacity:1;
-        transform: translateX(0);
-        
-    }
-    .nav-links a:active{
-        color: white;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-    .menu-logo{
-    width:100%;
-    display:flex;
-    justify-content:flex-end;
-    align-items:flex-start;
-
-    margin:0;
-    padding:0 0 15px 0;
-
-    border:none !important;
+.menu-subtitle{
+    display: none;
 }
 
-    .menu-logo img{
-    width:145px;
-    position:relative;
-    top:-3px;
-    }
-
-    .nav-links li a{
-    color:white !important;
-    font-size:1.15rem;
-    font-weight:600;
-    letter-spacing:1px;
-    transition:.25s;
-    }
-
-    .nav-links.active{
-        left:0;
-    }
-    .logo{
-        width: 180px;
-    }
-
+.menu-icon{
+    display: none;
+}
+.arrow{
+    display: none !important;
 }
 
 .mobile-logo{
     display:none;
 }
-
 @media (max-width: 992px){
+    
+.logo{
+    display:none;
+}
+.mobile-prestador{
+    display: block;
+    margin-top: 20px;
+    border: none;
+    padding: 14px;
+    list-style: none;
+}
 
-    /* Barra superior */
+.mobile-prestador .btn-admin-mobile{
 
-    .navbar{
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-
-        padding:15px 20px;
-    }
-
-    /* Ocultar logo superior */
-
-    .logo{
-        display:none;
-    }
-
-    /* Hamburguesa izquierda */
-
-    .hamburger{
-        display:block;
-
-        position:fixed;
-        left:20px;
-        top:15px;
-
-        right:auto;
-
-        z-index:9999;
-
-        background:none;
-        border:none;
-
-        color:white;
-        font-size:2rem;
-        cursor:pointer;
-    }
-
-    /* Buscador derecha */
-
-    .search-container{
-        margin-left:auto;
-        margin-right:0;
-    }
-
-    .search-btn{
-        width:42px;
-        height:42px;
-    }
-
-    /* Menú */
-
-    .nav-links{
-        position:fixed;
-
-        top:0;
-        left:-100%;
-
-        width:85%;
-        max-width:350px;
-        height:100vh;
-
-        background:#111;
-
-        display:flex;
-        flex-direction:column;
-
-        justify-content:flex-start;
-        align-items:center;
-
-        gap:24px;
-
-        padding:40px 20px;
-
-        transition:left .3s ease;
-
-        z-index:1500;
-
-        transform:none;
-    }
-
-    .nav-links.active{
-        left:0;
-    }
-
-    /* Logo dentro del menú */
-
-    .mobile-logo{
     display:flex;
     justify-content:center;
     align-items:center;
+    gap:10px;
 
     width:100%;
 
-    padding:20px 0 30px;
-    margin-bottom:15px;
+    padding:15px 18px;
+
+    background:linear-gradient(135deg,#2E7D32,#43A047);
+
+    color:#fff;
+
+    border-radius:16px;
+
+    font-size:1rem;
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 20px rgba(46,125,50,.35);
+
+    transition:.25s ease;
+}
+
+.mobile-prestador .btn-admin-mobile:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 12px 24px rgba(46,125,50,.45);
+
+    background:linear-gradient(135deg,#388E3C,#4CAF50);
+
+}
+
+.mobile-prestador .btn-admin-mobile:active{
+
+    transform:scale(.97);
+
+}
+
+.mobile-prestador i{
+    font-size:18px;
+}
+
+.hamburger{
+
+    display:block;
+
+    position:fixed;
+
+    top:18px;
+    left:20px;
+
+    z-index:3000;
+
+    border:none;
+    background:none;
+
+    color:#fff;
+
+    font-size:2rem;
+
+    cursor:pointer;
+}
+
+.nav-links{
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    position:fixed;
+    top:0;
+    left:0;
+    width: 295px;
+    max-width: 85%;
+    padding: 18px;
+    border-radius: 22px;
+    height:calc(100dvh - 30px);
+    margin:15px;
+    background:#071b21;
+    transform:translateX(-100%);
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+
+    z-index:2000;
+}
+
+
+.nav-links.active{
+
+    transform:translateX(0);
+
+}
+
+.nav-links::-webkit-scrollbar{
+    width: 0;
+}
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:1500;
+}
+
+.menu-overlay.active{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.mobile-logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    padding: 10px 0 16px;
+    margin-bottom: 12px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.mobile-logo img{
+
+    width:130px;
+
+}
+
+.nav-links li{
+
+    margin-bottom: 0;
+   
+
+    list-style:none;
+}
+
+.nav-links li a{
+
+    display:block;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    padding:18px 0;
 
     border-bottom:1px solid rgba(255,255,255,.12);
 }
 
-.mobile-logo img{
-    width:200px;
-    max-width:80%;
-    height:auto;
+.mobile-prestador{
+
+    margin-top:20px;
 }
 
-    .nav-links li{
-        width:100%;
-        text-align:center;
-    }
+.btn-admin-mobile{
+    justify-content:space-between;
+    height:50px;
 
-    .nav-links a{
-        font-size:1.1rem;
-    }
+    border-radius:14px;
 
-    .mobile-prestador{
-        display:block;
-        margin-top:20px;
-    }
+    font-size:16px;
 
-    .btn-admin{
-        display:none;
-    }
+    gap:8px;
 }
+
+.btn-admin-mobile i{
+    font-size:18px;
+}
+
+.menu-icon{
+
+     width: 36px;
+    height: 36px;
+
+    border-radius:12px;
+
+    background:#2E7D32;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+}
+
+.menu-icon i{
+    font-size:16px;
+}
+.menu-title{
+
+    font-size: 15px;
+    font-weight:600;
+
+    margin-bottom:2px;
+}
+
+.menu-subtitle{
+
+    font-size: 11px;
+
+    color:#b8c3c7;
+
+    line-height:1.3;
+}
+.menu-icon, .arrow{
+        display: flex;
+    }
+
+.menu-item:hover{
+
+    background:#173b33;
+
+    transform:translateX(4px);
+
+}
+
+.arrow{
+
+    font-size:14px;
+
+    color:#64d27b;
+}
+
+
+
+.menu-item{
+
+    display:flex;
+    align-items:center;
+   
+
+    padding: 12px 14px;
+    gap: 10px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.25s;
+} 
+
+.menu-subtitle{
+        display: block;
+    }
+
+}
+   
+
+
+
 
 /* =========================
    SECCIONES DESTACADAS
@@ -1247,302 +1269,5 @@ RESPONSIVE
     background-image:url("https://www.turismoentrerios.com/util/v2017/img/pesca.jpg");
 }
 
-/* ========================================
-   MOBILE
-======================================== */
 
-@media (max-width: 768px){
 
-    /* =========================
-       NAVBAR
-    ========================= */
-
-    .navbar{
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-
-        display:flex;
-        justify-content:space-between;
-        align-items:center;
-
-        padding:15px 20px;
-        min-height:72px;
-        overflow: hidden;
-    }
-
-    /* Ocultar logo superior */
-
-    .logo{
-        display:none;
-    }
-
-    /* Hamburguesa izquierda */
-
-    .hamburger{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-
-        width:42px;
-        height:42px;
-
-        position:relative;
-        top:auto;
-        left:auto;
-        right:auto;
-
-        background:none;
-        border:none;
-
-        color:rgb(255, 255, 255);
-        font-size:2rem;
-        cursor:pointer;
-
-        z-index:9999;
-    }
-
-    /* Buscador derecha */
-
-   .search-container{
-    position:relative;
-    display:flex;
-    align-items:center;
-
-    margin-left:auto;
-    margin-right:20px; /* 👈 lo empuja un poco a la izquierda */
-}
-
-   .search-btn{
-    width:42px;
-    height:42px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    flex-shrink:0;
-}
-
-   .search-input{
-    position:absolute;
-
-    right:100%;          /* 👈 en vez de salirse a la derecha */
-    margin-right:45px;   /* espacio entre lupa e input */
-
-    width:120px;
-    max-width:40vw;
-
-    opacity:1;           /* opcional: visible sin romper */
-}
-
-    /* Menú lateral */
-
-    .nav-links{
-        position:fixed;
-
-        top:0;
-        left:-100%;
-
-        width:280px;
-        max-width:80vw;
-        height:100vh;
-
-        backdrop-filter: blur(10px);
-        background:#111111b3;
-        
-
-        display:flex;
-        flex-direction:column;
-
-        justify-content:flex-start;
-        align-items:center;
-
-        gap:24px;
-
-        padding:40px 20px;
-
-        transition:left .3s ease;
-
-        transform:none;
-        z-index:1500;
-    }
-
-    .nav-links.active{
-        left:0;
-    }
-
-    /* Logo dentro del menú */
-
-    .mobile-logo{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-
-        width:100%;
-
-        padding:20px 0 30px;
-        margin-bottom:15px;
-
-        border-bottom:1px solid rgba(255,255,255,.12);
-    }
-
-    .mobile-logo img{
-        width:200px;
-        max-width:80%;
-        height:auto;
-    }
-
-    .nav-links li{
-        width:100%;
-        text-align:center;
-    }
-
-    .nav-links a{
-        font-size:1.1rem;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero-content h1{
-        font-size:2.2rem;
-        line-height:1.2;
-    }
-
-    .hero-content p{
-        font-size:1rem;
-        padding:0 15px;
-    }
-
-    .hero-dots{
-        bottom:25px;
-    }
-
-    /* =========================
-       TITULOS
-    ========================= */
-
-    .titulo-seccion,
-    .eventos h2{
-        font-size:1.8rem;
-        gap:10px;
-        margin-bottom:35px;
-    }
-
-    /* =========================
-       SECCIONES DESTACADAS
-    ========================= */
-
-    .feature-section{
-        height:45vh;
-        background-attachment:scroll;
-    }
-
-    .feature-overlay h2{
-        font-size:2rem;
-    }
-
-    .feature-overlay p{
-        font-size:1rem;
-    }
-
-    .feature-btn{
-        padding:12px 25px;
-    }
-
-    /* =========================
-       CARDS
-    ========================= */
-
-    .cards-grid{
-        grid-template-columns:1fr;
-        gap:30px;
-        padding:0 20px;
-    }
-
-    .card{
-        height:auto;
-    }
-
-    .card img{
-        height:180px;
-    }
-
-    /* =========================
-       EVENTOS
-    ========================= */
-
-    .eventos{
-        padding:70px 0;
-    }
-
-    .slider-wrapper{
-        gap:10px;
-        padding:10px;
-    }
-
-    .viewport{
-        width:290px;
-        padding:20px 0;
-    }
-
-    .slider{
-        gap:20px;
-    }
-
-    .slide{
-        flex:0 0 290px;
-    }
-
-    .slider-btn{
-        width:45px;
-        height:45px;
-        font-size:18px;
-    }
-
-    /* Ocultar fade lateral */
-
-    .slider-wrapper::before,
-    .slider-wrapper::after{
-        display:none;
-    }
-
-    /* =========================
-       PRESTADORES
-    ========================= */
-
-    .prestador-banner{
-        flex-direction:column;
-        padding:50px 20px;
-        text-align:center;
-        gap:20px;
-    }
-
-    .prestador-banner h2{
-        font-size:1.5rem;
-    }
-
-    .prestador-banner p{
-        font-size:.95rem;
-    }
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    .footer-logo img{
-        width:160px;
-    }
-
-    .footer-iconos{
-        gap:12px;
-    }
-
-    .footer-iconos a{
-        width:42px;
-        height:42px;
-    }
-}
