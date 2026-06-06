@@ -899,6 +899,9 @@ RESPONSIVE
 .menu-logo{
     display: none;
 }
+.mobile-logo{
+    display: none;
+}
 
 @media (max-width: 992px){
     

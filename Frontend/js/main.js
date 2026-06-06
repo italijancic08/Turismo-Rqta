@@ -91,8 +91,7 @@ botonesExplorar.forEach((btn) => {
     });
 });
 
-
-/* const menuToggle = document.querySelector(".menu-toggle");
+const menuToggle = document.querySelector(".menu-toggle");
 const sideMenu = document.querySelector(".side-menu");
 const overlay = document.querySelector(".overlay");
 const closeMenu = document.querySelector(".close-menu");
@@ -111,16 +110,16 @@ if (menuToggle && sideMenu && overlay && closeMenu) {
 
     closeMenu.addEventListener("click", closeMenuFn);
     overlay.addEventListener("click", closeMenuFn);
-} */
+} 
 
-/* function closeMenuFn(){
+function closeMenuFn(){
     sideMenu.classList.remove("active");
     overlay.classList.remove("active");
-} */
+} 
 
-/* closeMenu.addEventListener("click", closeMenuFn);
+closeMenu.addEventListener("click", closeMenuFn);
 overlay.addEventListener("click", closeMenuFn);
- */
+
 // Menú hamburguesa
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
