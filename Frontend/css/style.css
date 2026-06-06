@@ -889,19 +889,25 @@ footer {
 RESPONSIVE
 ======================================== */
 
-.menu-logo{
-    display:none;
-}
+
 .hamburger{
-    display:none;
+    display: none;
 }
 .mobile-prestador{
-    display:none;
+    display: none;
+}
+.menu-logo{
+    display: none;
+}
+.mobile-logo{
+    display: none;
 }
 
 .menu-subtitle{
     display: none;
 }
+=======
+
 
 .menu-icon{
     display: none;
@@ -1193,6 +1199,7 @@ RESPONSIVE
 
 }
    
+
 
 
 
