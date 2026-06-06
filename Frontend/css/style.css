@@ -889,168 +889,297 @@ footer {
 RESPONSIVE
 ======================================== */
 
-
+.menu-logo{
+    display:none;
+}
 .hamburger{
-    display: none;
+    display:none;
 }
 .mobile-prestador{
-    display: none;
+    display:none;
 }
-.menu-logo{
-    display: none;
-}
-.mobile-logo{
+
+.menu-subtitle{
     display: none;
 }
 
+.menu-icon{
+    display: none;
+}
+.arrow{
+    display: none !important;
+}
+
+.mobile-logo{
+    display:none;
+}
 @media (max-width: 992px){
     
-    body{
-        overflow-x: hidden;
-    }
-
-    .mobile-prestador{
-    background: #2E7D32;
-    color: white;
-    padding: 10px 22px;
-    border-radius: 30px;
-    margin-left: 10px;
-    }
-
-    .search-container{
-        margin-left:auto;
-        margin-right:5px;
-    }  
-
-    .search-input{
-        right:42px;
-        max-width:150px; 
-        top : -20px;
-    }
-    .search-btn{
-        width:40px;
-        height:40px;
-        top: -22px;
-    }
-
-    .mobile-prestador a{
-    color:white;
-    font-weight:600;
-    font-size:1.1rem;
-    }
-
-    .btn-admin{
-        display:none;
-    }
-
-
-    .navbar{
-    display:flex;
-    align-items:center;
-    }
-
-    .menu-logo{
-    width:100%;
-    display:flex;
-    justify-content:flex-end;
-    align-items:flex-start;
-
-    margin:0;
-    padding:0 0 15px 0;
-
-    border:none !important;
+.logo{
+    display:none;
 }
 
-    .menu-logo img{
-    width:145px;
-    position:relative;
-    top:-3px;
-    }
+.hamburger{
 
-    .nav-links li a{
-    color:white !important;
-    font-size:1.15rem;
-    font-weight:600;
-    letter-spacing:1px;
-    transition:.25s;
-    }
+    display:block;
 
-    .nav-links.active{
-        left:0;
-    }
-    .logo{
-        width: 180px;
-    }
+    position:fixed;
 
+    top:18px;
+    left:20px;
+
+    z-index:3000;
+
+    border:none;
+    background:none;
+
+    color:#fff;
+
+    font-size:2rem;
+
+    cursor:pointer;
 }
 
-    .menu-overlay{
+.nav-links{
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
     position:fixed;
     top:0;
     left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.55);
+    width: 295px;
+    max-width: 85%;
+    padding: 18px;
+    border-radius: 22px;
+    height:100vh;
+    background:#071b21;
+    transform:translateX(-100%);
+    transition:.4s;
+    display:flex;
+    flex-direction:column;
+
+    z-index:2000;
+}
+
+
+.nav-links.active{
+
+    transform:translateX(0);
+
+}
+
+.nav-links::-webkit-scrollbar{
+    width: 0;
+}
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
 
     opacity:0;
     visibility:hidden;
 
-    transition: opacity .4s ease;
+    transition:.3s;
 
-    z-index:1400;
+    z-index:1500;
 }
 
 .menu-overlay.active{
+
     opacity:1;
     visibility:visible;
-}
-.logo{
-    margin-left: 70px;
 
 }
-.logo img{
-    width: 160px;
-    margin-left: 0;
-    
-}
-.categorias{
-    padding:30px 0 50px;
+
+.mobile-logo{
+
+    display:flex;
+
+    justify-content:center;
+
+    padding: 10px 0 16px;
+    margin-bottom: 12px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
 
 }
-.titulo-seccion::before,.titulo-seccion::after{
-    display:none;
+
+.mobile-logo img{
+
+    width:130px;
+
+}
+
+.nav-links li{
+
+    margin-bottom: 0;
+   
+
+    list-style:none;
+}
+
+.nav-links li a{
+
+    display:block;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    font-weight:600;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+.mobile-prestador{
+    display:block;
+    margin-top:auto;
+    padding-top:20px;
+    list-style:none;
+}
+
+.mobile-prestador .btn-admin-mobile{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    width:100%;
+
+    padding:15px 18px;
+
+    background:linear-gradient(135deg,#2E7D32,#43A047);
+
+    color:#fff;
+
+    border-radius:16px;
+
+    font-size:1rem;
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 20px rgba(46,125,50,.35);
+
+    transition:.25s ease;
+}
+
+
+.mobile-prestador .btn-admin-mobile:active{
+
+    transform:scale(.97);
+
+}
+
+.mobile-prestador i{
+    font-size:18px;
+}
+
+.btn-admin-mobile{
+
+    height:50px;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    gap:8px;
+}
+
+.btn-admin-mobile i{
+    font-size:18px;
+}
+
+.menu-icon{
+
+    width: 36px;
+    height: 36px;
+
+    border-radius:12px;
+
+    background:#2E7D32;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+}
+
+.menu-icon i{
+    font-size:16px;
+}
+.menu-title{
+
+    font-size: 15px;
+    font-weight:600;
+
+    margin-bottom:2px;
+}
+
+.menu-subtitle{
+
+    font-size: 11px;
+
+    color:#b8c3c7;
+
+    line-height:1.3;
+}
+.menu-icon, .arrow{
+        display: flex;
     }
 
-.titulo-seccion{
+.menu-item:hover{
+
+    background:#173b33;
+
+    transform:translateX(4px);
+
+}
+
+.arrow{
+
+    font-size:14px;
+
+    color:#64d27b;
+}
+
+
+
+.menu-item{
+
     display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
+    align-items:center;
+   
 
-        text-align:center;
+    padding: 12px 14px;
+    gap: 10px;
 
-        font-size:2.2rem;
-        gap:5px;
-        margin-bottom:30px;
-        padding:20px;
-}
+    border-radius:14px;
 
-.cards-grid{
-    grid-template-columns:1fr;
-    gap:25px;
-    padding:0 20px;
-    margin-top:30px;
-}
-.card{
-    height:auto;
-    border-radius:16px;
-}
+    background:rgba(255,255,255,.05);
 
-.card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
+    transition:.25s;
+} 
+
+.menu-subtitle{
+        display: block;
+    }
+
 }
+   
+
+
 
 
 /* =========================
@@ -1125,10 +1254,5 @@ RESPONSIVE
     background-image:url("https://www.turismoentrerios.com/util/v2017/img/pesca.jpg");
 }
 
-
-
-/* ========================================
-   MOBILE
-======================================== */
 
 

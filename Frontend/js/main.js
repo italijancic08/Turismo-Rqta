@@ -1,16 +1,14 @@
-// =========================
+// ========================================
 // BUSCADOR
-// =========================
+// ========================================
 
 const searchBtn = document.querySelector(".search-btn");
 const searchInput = document.querySelector(".search-input");
 
 if (searchBtn && searchInput) {
-
     let abierto = false;
 
     searchBtn.addEventListener("click", () => {
-
         abierto = !abierto;
 
         searchInput.style.width = abierto ? "220px" : "0";
@@ -18,13 +16,13 @@ if (searchBtn && searchInput) {
         searchInput.style.padding = abierto ? "10px 15px" : "10px 0";
 
         if (abierto) searchInput.focus();
-    });
 
+    });
 }
 
-// =========================
-// CARRUSEL EVENTOS
-// =========================
+// ========================================
+// CARRUSEL DE EVENTOS
+// ========================================
 
 const slider = document.querySelector(".slider");
 const nextBtn = document.querySelector(".next");
@@ -36,18 +34,24 @@ if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
 
     let currentIndex = 0;
 
+    function getStep() {
+        const gap = parseInt(getComputedStyle(slider).columnGap || getComputedStyle(slider).gap);
+        return slides[0].offsetWidth + gap;
+    }
+
     function getMaxIndex() {
+        const step = getStep();
         const visibles = Math.floor(
-            viewport.offsetWidth / slides[0].offsetWidth
+            (viewport.offsetWidth + parseInt(getComputedStyle(slider).gap))
+            / step
         );
-        return Math.max(0, slides.length - visibles);
+
+        return slides.length - visibles;
     }
 
     function goTo(index) {
         currentIndex = index;
-        slider.style.transform = `translateX(-${
-            currentIndex * slides[0].offsetWidth
-        }px)`;
+        slider.style.transform = `translateX(-${currentIndex * getStep()}px)`;
     }
 
     nextBtn.addEventListener("click", () => {
@@ -71,80 +75,93 @@ if (slider && nextBtn && prevBtn && viewport && slides.length > 0) {
     }, 4000);
 }
 
-// =========================
-// BOTONES EXPLORAR
-// =========================
-
-const botonesExplorar = document.querySelectorAll(".btnExplorar");
-
-botonesExplorar.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const categorias = document.getElementById("categorias");
-
-        if (categorias) {
-            categorias.scrollIntoView({
-                behavior: "smooth"
-            });
-        }
-    });
-});
-
-const menuToggle = document.querySelector(".menu-toggle");
-const sideMenu = document.querySelector(".side-menu");
-const overlay = document.querySelector(".overlay");
-const closeMenu = document.querySelector(".close-menu");
-
-if (menuToggle && sideMenu && overlay && closeMenu) {
-
-    menuToggle.addEventListener("click", () => {
-        sideMenu.classList.add("active");
-        overlay.classList.add("active");
-    });
-
-    function closeMenuFn() {
-        sideMenu.classList.remove("active");
-        overlay.classList.remove("active");
-    }
-
-    closeMenu.addEventListener("click", closeMenuFn);
-    overlay.addEventListener("click", closeMenuFn);
-} 
-
-function closeMenuFn(){
-    sideMenu.classList.remove("active");
-    overlay.classList.remove("active");
-} 
-
-closeMenu.addEventListener("click", closeMenuFn);
-overlay.addEventListener("click", closeMenuFn);
-
-// Menú hamburguesa
+// ========================================
+// MENU HAMBURGUESA
+// ========================================
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("navLinks");
+const menuOverlay = document.getElementById("menuOverlay");
 
-if (hamburger && navLinks) {
+if (hamburger && navLinks && menuOverlay) {
+
+    function closeMenu() {
+        navLinks.classList.remove("active");
+        menuOverlay.classList.remove("active");
+        hamburger.textContent = "☰";
+    }
 
     hamburger.addEventListener("click", () => {
 
         navLinks.classList.toggle("active");
+        menuOverlay.classList.toggle("active");
 
-        if (navLinks.classList.contains("active")) {
-            hamburger.innerHTML = "✕";
-        } else {
-            hamburger.innerHTML = "☰";
-        }
-
+        hamburger.textContent = navLinks.classList.contains("active")
+            ? "✕"
+            : "☰";
     });
 
-    const menuLinks = document.querySelectorAll("#navLinks a");
+    menuOverlay.addEventListener("click", closeMenu);
 
-    menuLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            navLinks.classList.remove("active");
-            hamburger.innerHTML = "☰";
+    document.querySelectorAll("#navLinks a").forEach(link => {
+        link.addEventListener("click", closeMenu);
+    });
+
+}
+
+// ========================================
+// HERO SLIDER
+// ========================================
+
+const bg1 = document.querySelector(".bg1");
+const bg2 = document.querySelector(".bg2");
+const dots = document.querySelectorAll(".dot");
+
+if (bg1 && bg2 && dots.length > 0) {
+
+    const images = [
+        "assets/slide1.jpg",
+        "assets/slide2.jpg",
+        "assets/slide3.jpg",
+        "assets/slide4.jpg",
+        "assets/slide5.jpg"
+    ];
+
+    let current = 0;
+    let activeBg = bg1;
+
+    bg1.style.backgroundImage = `url('${images[0]}')`;
+    bg1.style.opacity = "1";
+
+    function showSlide(index) {
+
+        const nextBg = activeBg === bg1 ? bg2 : bg1;
+
+        nextBg.style.backgroundImage = `url('${images[index]}')`;
+        nextBg.style.opacity = "1";
+
+        activeBg.style.opacity = "0";
+
+        activeBg = nextBg;
+
+        dots.forEach(dot => dot.classList.remove("active"));
+        dots[index].classList.add("active");
+    }
+
+    setInterval(() => {
+
+        current = (current + 1) % images.length;
+        showSlide(current);
+
+    }, 5000);
+
+    dots.forEach((dot, index) => {
+
+        dot.addEventListener("click", () => {
+
+            current = index;
+            showSlide(current);
+
         });
-    });
 
+    });
 }
