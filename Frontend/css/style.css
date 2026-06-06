@@ -918,60 +918,6 @@ RESPONSIVE
 .logo{
     display:none;
 }
-.mobile-prestador{
-    display: block;
-    margin-top: 20px;
-    border: none;
-    padding: 14px;
-    list-style: none;
-}
-
-.mobile-prestador .btn-admin-mobile{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-
-    width:100%;
-
-    padding:15px 18px;
-
-    background:linear-gradient(135deg,#2E7D32,#43A047);
-
-    color:#fff;
-
-    border-radius:16px;
-
-    font-size:1rem;
-    font-weight:600;
-
-    text-decoration:none;
-
-    box-shadow:0 8px 20px rgba(46,125,50,.35);
-
-    transition:.25s ease;
-}
-
-.mobile-prestador .btn-admin-mobile:hover{
-
-    transform:translateY(-2px);
-
-    box-shadow:0 12px 24px rgba(46,125,50,.45);
-
-    background:linear-gradient(135deg,#388E3C,#4CAF50);
-
-}
-
-.mobile-prestador .btn-admin-mobile:active{
-
-    transform:scale(.97);
-
-}
-
-.mobile-prestador i{
-    font-size:18px;
-}
 
 .hamburger{
 
@@ -1008,8 +954,7 @@ RESPONSIVE
     max-width: 85%;
     padding: 18px;
     border-radius: 22px;
-    height:calc(100dvh - 30px);
-    margin:15px;
+    height:100vh;
     background:#071b21;
     transform:translateX(-100%);
     transition:.4s;
@@ -1096,12 +1041,52 @@ RESPONSIVE
 }
 
 .mobile-prestador{
+    display:block;
+    margin-top:auto;
+    padding-top:20px;
+    list-style:none;
+}
 
-    margin-top:20px;
+.mobile-prestador .btn-admin-mobile{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    width:100%;
+
+    padding:15px 18px;
+
+    background:linear-gradient(135deg,#2E7D32,#43A047);
+
+    color:#fff;
+
+    border-radius:16px;
+
+    font-size:1rem;
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:0 8px 20px rgba(46,125,50,.35);
+
+    transition:.25s ease;
+}
+
+
+.mobile-prestador .btn-admin-mobile:active{
+
+    transform:scale(.97);
+
+}
+
+.mobile-prestador i{
+    font-size:18px;
 }
 
 .btn-admin-mobile{
-    justify-content:space-between;
+
     height:50px;
 
     border-radius:14px;
@@ -1117,7 +1102,7 @@ RESPONSIVE
 
 .menu-icon{
 
-     width: 36px;
+    width: 36px;
     height: 36px;
 
     border-radius:12px;
