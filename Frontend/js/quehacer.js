@@ -1,9 +1,13 @@
+/* ========================================
+CARGAR ACTIVIDADES
+======================================== */
+
 document.addEventListener("DOMContentLoaded", async () => {
 
     const contenedor =
     document.getElementById("contenedor-actividades");
 
-    try{
+    try {
 
         const respuesta =
         await fetch(
@@ -16,6 +20,16 @@ document.addEventListener("DOMContentLoaded", async () => {
         contenedor.innerHTML = "";
 
         actividades.forEach(act => {
+
+            const mapaUrl = act.maps_url
+                ? act.maps_url.replace(
+                    "https://maps.google.com/?q=",
+                    "https://www.google.com/maps?q="
+                )
+                : "https://www.google.com/maps?q=Reconquista,Santa+Fe,Argentina";
+
+            const enlaceMapa = act.maps_url ||
+                "https://www.google.com/maps?q=Reconquista,Santa+Fe,Argentina";
 
             contenedor.innerHTML += `
 
@@ -32,16 +46,27 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                         <h3>${act.nombre}</h3>
 
-                        <p>
-                            ${act.descripcion.substring(0,100)}...
+                        <p class="descripcion-corta">
+                            ${
+                                act.descripcion.length > 120
+                                ? act.descripcion.substring(0,120) + "..."
+                                : act.descripcion
+                            }
                         </p>
 
-                        <a
-                            href="${act.maps_url}"
-                            target="_blank"
-                            class="btn-mas">
-                            Ver más
-                        </a>
+                        ${
+                            act.descripcion.length > 120
+                            ? `
+                                <button class="btn-mas">
+                                    Ver más
+                                </button>
+
+                                <div class="descripcion-completa">
+                                    ${act.descripcion}
+                                </div>
+                            `
+                            : ""
+                        }
 
                     </div>
 
@@ -57,13 +82,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 
                         <iframe
                             loading="lazy"
-                            src="${act.maps_url.replace(
-                                'https://maps.google.com/?q=',
-                                'https://www.google.com/maps?q='
-                            )}&output=embed">
+                            src="${mapaUrl}&output=embed">
                         </iframe>
 
                     </div>
+
+                    <p>
+                        <strong>Ubicación:</strong><br>
+                        ${
+                            act.maps_url
+                            ? "Ubicación específica"
+                            : "Mostrando ubicación general de Reconquista"
+                        }
+                    </p>
 
                     <p>
                         <strong>Dirección:</strong><br>
@@ -81,7 +112,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     </p>
 
                     <a
-                        href="${act.maps_url}"
+                        href="${enlaceMapa}"
                         target="_blank"
                         class="btn-mapa">
 
@@ -97,46 +128,184 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         });
 
-    }catch(error){
+        /* ========================================
+        VER MÁS
+        ======================================== */
+
+        document.querySelectorAll(".btn-mas").forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                const descripcionCompleta =
+                btn.nextElementSibling;
+
+                const descripcionCorta =
+                btn.parentElement.querySelector(
+                    ".descripcion-corta"
+                );
+
+                descripcionCompleta.classList.toggle(
+                    "abierta"
+                );
+
+                if (
+                    descripcionCompleta.classList.contains(
+                        "abierta"
+                    )
+                ) {
+
+                    descripcionCorta.style.display =
+                    "none";
+
+                    btn.textContent =
+                    "Ver menos";
+
+                } else {
+
+                    descripcionCorta.style.display =
+                    "block";
+
+                    btn.textContent =
+                    "Ver más";
+
+                }
+
+            });
+
+        });
+
+        /* ========================================
+        POPUPS INTELIGENTES
+        ======================================== */
+
+        const wrappers =
+        document.querySelectorAll(".actividad-wrapper");
+
+        wrappers.forEach(wrapper => {
+
+            const popup =
+            wrapper.querySelector(".info-popup");
+
+            wrapper.addEventListener(
+                "mouseenter",
+                () => {
+
+                    popup.classList.remove(
+                        "izquierda"
+                    );
+
+                    const popupRect =
+                    popup.getBoundingClientRect();
+
+                    if (
+                        popupRect.right >
+                        window.innerWidth
+                    ) {
+
+                        popup.classList.add(
+                            "izquierda"
+                        );
+
+                    }
+
+                }
+            );
+
+        });
+
+    } catch (error) {
 
         console.error(error);
 
         contenedor.innerHTML = `
             <h3>Error al cargar actividades</h3>
         `;
+
     }
 
 });
 
-const searchBtn = document.querySelector(".search-btn");
-const searchInput = document.querySelector(".search-input");
+
+/* ========================================
+BUSCADOR
+======================================== */
+
+const searchBtn =
+document.querySelector(".search-btn");
+
+const searchInput =
+document.querySelector(".search-input");
 
 if (searchBtn && searchInput) {
 
     let abierto = false;
 
-    searchBtn.addEventListener("click", () => {
+    searchBtn.addEventListener(
+        "click",
+        () => {
 
-        if (!abierto) {
+            if (!abierto) {
 
-            searchInput.style.width = "220px";
-            searchInput.style.opacity = "1";
-            searchInput.style.padding = "10px 15px";
+                searchInput.style.width =
+                "220px";
 
-            searchInput.focus();
+                searchInput.style.opacity =
+                "1";
 
-            abierto = true;
+                searchInput.style.padding =
+                "10px 15px";
+
+                searchInput.focus();
+
+                abierto = true;
+
+            } else {
+
+                searchInput.style.width =
+                "0";
+
+                searchInput.style.opacity =
+                "0";
+
+                searchInput.style.padding =
+                "10px 0";
+
+                abierto = false;
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ========================================
+NAVBAR SCROLL
+======================================== */
+
+window.addEventListener(
+    "scroll",
+    () => {
+
+        const navbar =
+        document.querySelector(".navbar");
+
+        if (
+            window.scrollY > 50
+        ) {
+
+            navbar.classList.add(
+                "scrolled"
+            );
 
         } else {
 
-            searchInput.style.width = "0";
-            searchInput.style.opacity = "0";
-            searchInput.style.padding = "10px 0";
-
-            abierto = false;
+            navbar.classList.remove(
+                "scrolled"
+            );
 
         }
 
-    });
-
-}
+    }
+);

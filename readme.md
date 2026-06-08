@@ -204,6 +204,17 @@ Fecha 05/06/2026
 
 ---
 
+## v0.1.9 - Pagina quever y admin listas
+
+Fecha 08/06/2026
+
+### Agregado
+
+* Pagina quever terminada
+* Pagina admin-actividades terminada
+
+---
+
 # Lista de Tareas
 
 ## Frontend
@@ -241,14 +252,15 @@ Fecha 05/06/2026
 
 # Última Actualización
 
-Fecha: 05/06/2026
+Fecha: 08/06/2026
 
 Responsables: Valentino Rivas
 
 ### Agregado
-* Slider eventos arreglado
-* Adaptacion completa de index para celulares
-* Menu desplegable tipo hamburguesa
+* Navbar arreglada
+* Pagina quever terminada
+* Pagina admin-actividades terminada
+* Menu desplegable arreglado
 
 
 

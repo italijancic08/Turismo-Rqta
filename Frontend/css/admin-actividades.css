@@ -72,6 +72,10 @@ button:hover{
     overflow:hidden;
     background:white;
     box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
 
 .card img{
@@ -82,6 +86,10 @@ button:hover{
 
 .card-body{
     padding:15px;
+
+    display:flex;
+    flex-direction:column;
+    flex:1;
 }
 
 .card h3{
@@ -96,7 +104,9 @@ button:hover{
 .acciones{
     display:flex;
     gap:10px;
-    margin-top:15px;
+
+    margin-top:auto;
+    padding-top:15px;
 }
 
 .btn-eliminar{
@@ -105,4 +115,10 @@ button:hover{
 
 .btn-eliminar:hover{
     background:#b71c1c;
+}
+
+.icono-mapa{
+    width:14px !important;
+    height:14px !important;
+    display:inline-block !important;
 }
