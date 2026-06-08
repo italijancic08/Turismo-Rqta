@@ -1,5 +1,14 @@
+/* ========================================
+CONFIGURACIÓN
+======================================== */
+
 const API =
 'http://localhost:3000/api/actividades';
+
+
+/* ========================================
+ELEMENTOS DOM
+======================================== */
 
 const form =
 document.getElementById('formActividad');
@@ -9,7 +18,17 @@ document.getElementById('listaActividades');
 
 let actividadEditando = null;
 
+
+/* ========================================
+INICIO
+======================================== */
+
 cargarActividades();
+
+
+/* ========================================
+GUARDAR / EDITAR ACTIVIDAD
+======================================== */
 
 form.addEventListener('submit', async (e) => {
 
@@ -39,10 +58,11 @@ form.addEventListener('submit', async (e) => {
         document.getElementById('imagen').value,
 
         maps_url:
-        document.getElementById('maps_url').value,
+        document.getElementById('maps_url').value.trim() || null,
 
         categoria:
         document.getElementById('categoria').value
+
     };
 
     try {
@@ -96,6 +116,11 @@ form.addEventListener('submit', async (e) => {
 
 });
 
+
+/* ========================================
+CARGAR ACTIVIDADES
+======================================== */
+
 async function cargarActividades() {
 
     try {
@@ -127,50 +152,60 @@ async function cargarActividades() {
                     </p>
 
                     <p>
-                        <strong>Dirección:</strong>
-                        ${act.direccion || '-'}
-                    </p>
+    <strong>Dirección:</strong>
+    ${act.direccion || '-'}
+</p>
 
-                    <p>
-                        <strong>Horario:</strong>
-                        ${act.horario || '-'}
-                    </p>
+<p>
+    <strong>Horario:</strong>
+    ${act.horario || '-'}
+</p>
 
-                    <p>
-                        <strong>Contacto:</strong>
-                        ${act.contacto || '-'}
-                    </p>
+<p>
+    <strong>Contacto:</strong>
+    ${act.contacto || '-'}
+</p>
 
-                    <p>
-                        <strong>Categoría:</strong>
-                        ${act.categoria || '-'}
-                    </p>
+<p>
+    <strong>Categoría:</strong>
+    ${act.categoria || '-'}
+</p>
 
-                    <div class="acciones">
+<p>
+    <strong>Ubicación:</strong>
+    ${
+        act.maps_url
+        ? '<img src="/Frontend/assets/Pin.png" class="icono-mapa"> Personalizada'
+        : '<img src="/Frontend/assets/Pin.png" class="icono-mapa"> Reconquista (por defecto)'
+    }
+</p>
 
-                        <button
-                            class="btn-editar"
-                            onclick="editarActividad(${act.id})">
+<div class="acciones">
 
-                            Editar
+    <button
+        class="btn-editar"
+        onclick="editarActividad(${act.id})">
 
-                        </button>
+        Editar
 
-                        <button
-                            class="btn-eliminar"
-                            onclick="eliminarActividad(${act.id})">
+    </button>
 
-                            Eliminar
+    <button
+        class="btn-eliminar"
+        onclick="eliminarActividad(${act.id})">
 
-                        </button>
+        Eliminar
 
-                    </div>
+    </button>
+
+</div>
 
                 </div>
 
             </div>
 
             `;
+
         });
 
     } catch (error) {
@@ -179,9 +214,15 @@ async function cargarActividades() {
 
         lista.innerHTML =
         '<p>Error al cargar actividades</p>';
+
     }
 
 }
+
+
+/* ========================================
+EDITAR ACTIVIDAD
+======================================== */
 
 async function editarActividad(id) {
 
@@ -235,6 +276,11 @@ async function editarActividad(id) {
     }
 
 }
+
+
+/* ========================================
+ELIMINAR ACTIVIDAD
+======================================== */
 
 async function eliminarActividad(id) {
 

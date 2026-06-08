@@ -78,17 +78,28 @@ header::after{
 ======================================== */
 
 .navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 
-    z-index:100;
+    z-index: 100;
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 2%;
+
+    transition: all 0.3s ease;
+}
+
+/* Navbar al hacer scroll */
+.navbar.scrolled{
+    background: rgba(3, 52, 2, 0.782);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
 }
 
 #categorias {
@@ -915,6 +926,10 @@ RESPONSIVE
 }
 @media (max-width: 992px){
     
+.navbar.scrolled{
+    display: none;
+}
+
 .logo{
     display:none;
 }
@@ -953,7 +968,8 @@ RESPONSIVE
     width: 295px;
     max-width: 85%;
     padding: 18px;
-    border-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
     height:100vh;
     background:#071b21;
     transform:translateX(-100%);
