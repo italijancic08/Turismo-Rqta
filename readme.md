@@ -204,7 +204,7 @@ Fecha 05/06/2026
 
 ---
 
-## v0.1.9 - Pagina quever y admin listas
+## v0.1.9 - Pagina quever y admin
 
 Fecha 08/06/2026
 
