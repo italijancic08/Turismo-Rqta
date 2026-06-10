@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prestadores Turísticos | Turismo Reconquista</title>
+
+    <link rel="stylesheet" href="../css/prestadores.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+     <nav class="navbar">
+
+        <div class="logo">
+            <a href="/Frontend/index.html">
+                <img src="https://reconquista.gob.ar/turismo/wp-content/uploads/2024/02/Area-de-Turismo_Logo-Web-Redes.png">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/Frontend/index.html">Explorar</a></li>
+            <li><a href="/Frontend/pages/quehacer.html">Qué Hacer</a></li>
+            <li><a href="/Frontend/pages/alojamientos.html">Alojamientos</a></li>
+            <li><a href="/Frontend/pages/gastronomia.html">Gastronomía</a></li>
+            <li><a href="/Frontend/pages/prestadores.html">Prestadores</a></li>
+        </ul>
+
+        <div class="search-container">
+
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <input
+                type="text"
+                class="search-input"
+                placeholder="Buscar..."
+            >
+
+        </div>
+
+        <a href="#" class="btn-admin">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Soy Prestador</span>
+        </a>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero-prestadores">
+
+   <div class="hero-search-container">
+
+    <h2 class="hero-search-title">
+        ¿Que estás buscando?
+    </h2>
+
+    <div class="hero-search">
+
+        <div class="search-icon">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+        </div>
+
+        <input
+            type="text"
+            id="buscador-prestadores"
+            placeholder="Buscar guía, excursión, pesca, kayak..."
+        >
+
+    </div>
+
+</div>
+
+</section>
+
+</div>
+
+
+    <!-- PRESTADORES -->
+
+    <section class="seccion-prestadores">
+
+        <div class="container">
+
+            <h2>Prestadores habilitados</h2>
+
+            <div
+                id="contenedor-prestadores"
+                class="grid-prestadores">
+
+                <!--
+                Las cards se cargarán desde JS
+                -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- POPUP DETALLE -->
+
+    <div id="popup-prestador" class="popup-overlay">
+
+        <div class="popup-contenido">
+
+            <button id="cerrar-popup" class="cerrar-popup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <img
+                id="popup-imagen"
+                src=""
+                alt="Prestador"
+                class="popup-imagen">
+
+            <span
+                id="popup-rubro"
+                class="badge-rubro">
+            </span>
+
+            <h2 id="popup-nombre"></h2>
+
+            <p id="popup-descripcion"></p>
+
+            <div class="datos-prestador">
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="popup-direccion"></span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <span id="popup-telefono"></span>
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span id="popup-email"></span>
+                </p>
+
+            </div>
+
+            <div class="acciones-popup">
+
+                <a
+                    id="popup-whatsapp"
+                    href="#"
+                    target="_blank"
+                    class="btn-whatsapp">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+
+                </a>
+
+                <a
+                    id="popup-mapa"
+                    href="#"
+                    target="_blank"
+                    class="btn-mapa">
+
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Cómo llegar
+
+                </a>
+
+                <a
+                    id="popup-web"
+                    href="#"
+                    target="_blank"
+                    class="btn-web">
+
+                    <i class="fa-solid fa-globe"></i>
+                    Sitio web
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../js/prestadores.js"></script>
+
+</body>
+
+</html>
