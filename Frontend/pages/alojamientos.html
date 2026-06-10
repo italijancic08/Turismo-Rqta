@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alojamientos | Turismo Reconquista</title>
+
+    <link rel="stylesheet" href="/Frontend/css/alojamientos.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <a href="/Frontend/index.html">
+                <img src="https://reconquista.gob.ar/turismo/wp-content/uploads/2024/02/Area-de-Turismo_Logo-Web-Redes.png">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/Frontend/index.html">Explorar</a></li>
+            <li><a href="/Frontend/pages/quehacer.html">Qué Hacer</a></li>
+            <li><a href="/Frontend/pages/alojamientos.html">Alojamientos</a></li>
+            <li><a href="/Frontend/pages/gastronomia.html">Gastronomía</a></li>
+            <li><a href="/Frontend/pages/prestadores.html">Prestadores</a></li>
+        </ul>
+
+        <div class="search-container">
+
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <input
+                type="text"
+                class="search-input"
+                placeholder="Buscar alojamiento..."
+            >
+
+        </div>
+
+        <a href="#" class="btn-admin">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Soy Prestador</span>
+        </a>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero-alojamientos">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+
+            <h1>Alojamientos en Reconquista</h1>
+
+            <p>
+                Hoteles, cabañas, hospedajes y espacios para descansar.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ALOJAMIENTOS -->
+
+    <section class="seccion-alojamientos">
+
+        <div class="container">
+
+            <h2>Alojamientos en Reconquista</h2>
+
+            <div
+                id="contenedor-alojamientos"
+                class="grid-alojamientos">
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="/Frontend/js/alojamientos.js"></script>
+
+</body>
+
+</html>
