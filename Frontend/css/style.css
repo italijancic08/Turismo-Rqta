@@ -472,6 +472,13 @@ header::after{
     border-color:#2E7D32;
 }
 
+.feature-section{
+        height:500px;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+
 /* ========================================
    CARDS
 ======================================== */
@@ -479,7 +486,7 @@ header::after{
 .cards-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:150px;
+    gap:10px;
     max-width: auto;
     padding: 0 5%;
     margin:60px auto 0;
@@ -491,17 +498,17 @@ header::after{
 }
 
 .card{
+    text-align: center;
+    height:auto !important;
+    overflow:visible !important;
     background:white;
     display: flex;
     flex-direction: column;
-
     border-radius:20px;
-    overflow:hidden;
-
     box-shadow: 0 10px 25px rgba(0,0,0,.08);
     transition:.3s;
-    height: 280px;
-    width: auto;
+    width: 100%;
+    margin:0;
 }
 
 .card:hover{
@@ -509,19 +516,27 @@ header::after{
 }
 
 .card img{
-    height:150px;
     object-fit:cover;
     flex-shrink: 0;
+    order:1;
+    width: 100%;
+    height: 220px;
+    
 }
 
 .card h3{
     margin:15px;
+    order:2;
 }
 
 .card p{
+    order:3;
     margin:0 15px 20px;
     flex: 1
+    
 }
+
+
 
 /* ========================================
    EVENTOS
@@ -924,7 +939,42 @@ RESPONSIVE
 .mobile-logo{
     display:none;
 }
-@media (max-width: 992px){
+.menu-icon,
+.menu-subtitle,
+.arrow{
+    display:none;
+}
+
+.menu-item{
+    background:none;
+    padding:0;
+    border-radius:0;
+}
+
+.menu-title{
+    font-size:1rem;
+    font-weight:500;
+}
+
+/* Menu Responsive */
+
+@media (max-width: 1200px){
+
+    .menu-icon,
+    .menu-subtitle,
+    .arrow{
+        display:flex;
+    }
+
+    .menu-item{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:12px 14px;
+        border-radius:14px;
+        background:rgba(255,255,255,.05);
+    }
+
 
 *{
     box-sizing: border-box;
@@ -1211,7 +1261,7 @@ html,body{
 
 .hero-content{
     text-align: center;
-    font-size:clamp(2rem,8vw,3rem);
+    
 }
 
 .hero-content h1{
@@ -1227,7 +1277,7 @@ html,body{
 /* FEATURES */
 
 .feature-section{
-    height: 300px;
+    height: 400px;
 }
 
 .feature-overlay{
@@ -1284,10 +1334,66 @@ html,body{
         order:3;
         
     }
+    .menu-icon,
+    .menu-subtitle,
+    .arrow{
+        display:flex;
     }
 
-@media (max-width: 576px){
+    .menu-item{
+        display:flex;
+        align-items:center;
+        gap:10px;
+        padding:12px 14px;
+        border-radius:14px;
+        background:rgba(255,255,255,.05);
+    }
 
+
+}
+
+    
+
+@media (max-width: 768px){
+
+    .feature-section{
+        height: 380px;
+    }
+
+    .feature-overlay{
+        padding: 30px;
+    }
+
+    .feature-overlay h2{
+        font-size: 2rem;
+        
+    }
+
+    .feature-overlay p{
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 576px){
+ .btn-admin{
+        padding:8px 18px;
+        font-size:0.8rem;
+    }
+      .search-container{
+        height:50px;
+        max-width:140px;
+        
+    }
+
+    .search-input{
+        width:100%;
+        height:38px;
+        font-size:1rem;
+        padding:0 10px;
+        width:150px !important;
+        right: 40px !important;
+    }
     /* HERO */
 
     .hero-content h1{
@@ -1326,15 +1432,27 @@ html,body{
     /* FEATURES */
 
     .feature-section{
-        height: 250px;
+        
+    height:280px;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    
     }
+    .feature-overlay{
+    padding:20px;
+    text-align:center;
+}
 
     .feature-overlay h2{
-        font-size: 1.5rem;
+        font-size:1.4rem;
+        line-height:1.1;
+        
     }
 
     .feature-overlay p{
-        font-size: .9rem;
+        font-size:.85rem;
+        line-height:1.4;
     }
 
     .feature-btn{
@@ -1400,9 +1518,6 @@ html,body{
         padding:60px 0;
     }
     
-    .categorias{
-        padding:60px 0;
-    }
     .viewport{
         width:100%;
         padding:20px 10px;
@@ -1412,9 +1527,7 @@ html,body{
         gap:20px;
     }
 
-    .slide{
-        flex:0 0 calc((100% - 20px) / 2);
-    }
+
     .slider-btn{
         display:flex;
         align-items:center;
@@ -1426,8 +1539,6 @@ html,body{
     
 
 }
-}
-
 
 /* EVENTOS */
 
@@ -1445,9 +1556,6 @@ html,body{
     height: auto;
 }
 
-.slider-btn{
-    display: none;
-}
 
 /* PRESTADOR */
 
@@ -1506,46 +1614,31 @@ footer{
 
 .slider{
     display:flex;
-    gap:20px;
+    gap:10px;
     transition:transform .5s ease;
 }
 
 .slide{
-    flex:0 0 calc((100% - 40px) / 3);
+    flex: 0 0 100%;
 }
- .slider-wrapper::before,
-    .slider-wrapper::after{
-        display:none;
-    }
 
-
-
-
-   
-
-
-
-
-/* =========================
-   SECCIONES DESTACADAS
-========================= */
-
-.feature-section{
-    height:70vh;
-    position:relative;
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-
+.slider-btn{
     display:flex;
     justify-content:center;
     align-items:center;
 
-    text-align:center;
-    margin:16px 0;
-    border-top:16px solid #fff;
-}
+    width:35px;
+    height:35px;
+        
+    }
+
+ .slider-wrapper::before,
+    .slider-wrapper::after{
+        display:none;    }
+/* =========================
+   SECCIONES DESTACADAS
+========================= */
+
 
 .feature-section:last-of-type{
     border-bottom:16px solid #fff;
@@ -1558,21 +1651,9 @@ footer{
     background:rgba(0,0,0,.55);
 }
 
-.feature-overlay{
-    position:relative;
-    z-index:2;
-    color:white;
-    max-width:900px;
-    padding:20px;
-}
-
-.feature-overlay h2{
-    font-size:4rem;
-    margin-bottom:20px;
-}
 
 .feature-overlay p{
-    font-size:1.3rem;
+    font-size:1.1rem;
     margin-bottom:30px;
 }
 
@@ -1585,6 +1666,361 @@ footer{
     text-decoration:none;
     font-weight:600;
 }
+}
+
+@media (max-width: 400px){
+
+    /* MENU */
+
+    .nav-links{
+        width:220px;
+        padding:12px;
+    }
+
+    .mobile-logo img{
+        width:85px;
+    }
+
+    .nav-links li a{
+        font-size:.95rem;
+        padding:12px 0;
+    }
+
+    .menu-item{
+        padding:8px 10px;
+        gap:6px;
+    }
+
+    .menu-icon{
+        width:28px;
+        height:28px;
+    }
+
+    .menu-icon i{
+        font-size:12px;
+    }
+
+    .menu-title{
+        font-size:13px;
+    }
+
+    .menu-subtitle{
+        font-size:9px;
+    }
+
+    .arrow{
+        font-size:11px;
+    }
+
+    .mobile-prestador .btn-admin-mobile{
+        padding:10px 12px;
+        font-size:.85rem;
+    }
+
+    .mobile-prestador i{
+        font-size:14px;
+    }
+
+    .btn-admin{
+        padding:8px 18px;
+        font-size:.7rem;
+    }
+      .search-container{
+        height:38px;
+        max-width:140px;
+    }
+
+    .search-input{
+        width:100%;
+        height:38px;
+        font-size:.8rem;
+        padding:0 10px;
+        width:120px !important;
+        right: 38px !important;
+    }
+
+    .search-btn{
+        width:38px;
+        height:38px;
+        font-size:.8rem;
+    
+    }
+
+
+    
+.eventos{
+        width:100%;
+        padding:50px 0;
+    }
+
+.eventos h2{
+        width:100%;
+        text-align:center;
+        margin:0 auto 30px;
+        padding:0 15px;
+        box-sizing:border-box;
+    }
+
+
+.feature-overlay h2{
+        font-size:1.8rem;
+        max-width:90%;
+        margin:auto;
+    }
+.slider-btn{
+        display:flex !important;
+        justify-content:center;
+        align-items:center;
+
+        width:40px;
+        height:40px;
+
+        font-size:1rem;
+
+        flex-shrink:0;
+    }
+    
+
+    }
+    
+
+@media (min-width: 768px) and (max-width: 1100px){
+     /* BOTON PRESTADOR */
+
+.btn-admin-mobile{
+    min-height:60px;
+    font-size:1.15rem;
+}
+
+.btn-admin-mobile i{
+    font-size:22px;
+}
+
+/* BUSCADOR */
+
+.search-input{
+    height:55px;
+    font-size:1.1rem;
+    padding:0 18px;
+}
+
+.search-btn{
+    width:55px;
+    height:55px;
+}
+
+.search-btn i{
+    font-size:1.2rem;
+}
+
+.mobile-prestador .btn-admin-mobile{
+    padding:20px;
+    font-size:1.15rem;
+    border-radius:18px;
+}
+    
+    .hamburger{
+        font-size:2.8rem;
+        top:25px;
+        left:25px;
+    }
+
+    .nav-links{
+    width:350px;
+    padding:25px;
+    }
+
+    .mobile-logo img{
+    width:170px;
+    }
+
+    .nav-links li a{
+    font-size:1.4rem;
+    padding:22px 0;
+    }
+
+    .menu-item{
+    padding:16px 18px;
+    gap:14px;
+    }
+
+    .menu-icon{
+    width:46px;
+    height:46px;
+    }
+
+    .menu-icon i{
+    font-size:20px;
+    }
+
+    .menu-title{
+    font-size:1.1rem;
+    }
+
+    .menu-subtitle{
+    font-size:.9rem;
+    }
+
+    .arrow{
+    font-size:18px;
+    }
+
+    .mobile-prestador .btn-admin-mobile{
+    padding:18px 20px;
+    font-size:1.1rem;
+    }
+
+    .mobile-prestador i{
+    font-size:20px;
+    }
+
+    .hero-content h1{
+        font-size: 4.5rem;
+    }
+
+    .hero-content p{
+    font-size: 1.3rem;
+    }
+
+    .card{
+        padding:25px;
+    }
+
+    .card h3{
+        font-size:2.5rem;
+    }
+
+    .card p{
+        font-size:1.7rem;
+    }
+
+    .card img{
+        height:280px;
+        object-fit:cover;
+    }
+
+    .feature-section{
+        height:500px;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+
+    .feature-overlay{
+        display:flex;
+        flex-direction:column;
+
+        align-items:center;      /* centra horizontalmente */
+        justify-content:flex-start; /* arriba */
+
+        text-align:center;
+
+        height:100%;
+
+        padding-top:25px;
+        padding-left:40px;
+        padding-right:40px;
+    }
+
+    .feature-overlay h2{
+        font-size:3rem;
+        margin-bottom:10px;
+    }
+
+    .feature-overlay p{
+        font-size:1.4rem;
+        line-height:1.4;
+        max-width:500px;
+        margin-bottom:20px;
+    }
+
+    .feature-btn{
+        
+        display:inline-block;
+
+        background:#4CAF50;
+        color:white;
+
+        padding:12px 24px;
+
+        border-radius:30px;
+
+        text-decoration:none;
+
+        font-weight:600;
+    
+    }
+
+    .btn-telefonos{
+    font-size:1.5rem;
+    padding:15px 25px;
+    }
+
+    footer{
+        padding:60px 30px;
+    }
+
+    .footer-contacto h3{
+        font-size:2rem;
+    }
+
+    .footer-iconos a{
+        font-size:1.8rem;
+    }
+
+    .footer-logo img{
+        width:250px;
+    }
+
+    .footer-copy{
+        font-size:1.5rem;
+    }
+
+
+}
+    
+@media (min-width:1201px){
+
+
+    .feature-section{
+        height: 500px;
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+    }
+
+    .feature-overlay{
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+        padding-top:30px;
+    }
+
+    .feature-overlay h2{
+        font-size:3rem;
+    }
+
+    .feature-overlay p{
+        font-size:1.2rem;
+        max-width:700px;
+    }
+
+    .feature-btn{
+        display:inline-block;
+        padding:15px 35px;
+        background:#39b54a;
+        color:white;
+        border-radius:999px;
+        text-decoration:none;
+        font-weight:600;
+    }
+    
+
+
+}
+
+
 
 .gastronomia{
     background-image:url(https://carnesargentinas.es/wp-content/uploads/2023/06/Las-9-comidas-argentinas-m%C3%A1s-sabrosas.jpg);
