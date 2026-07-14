@@ -250,7 +250,7 @@ Fecha 08/06/2026
 
 ---
 
-# Última Actualización
+# v0.1.8
 
 Fecha: 08/06/2026
 
@@ -262,6 +262,15 @@ Responsables: Valentino Rivas
 * Pagina admin-actividades terminada
 * Menu desplegable arreglado
 
+# Última Actualización
 
+Fecha: 14/07/2026
 
-Cambios realizados: v0.1.8
+Responsable: Gabriel Oviedo
+
+### Agregado
+* Creación del archivo AGENTS.md para OpenCode.
+* Documentación inicial de convenciones y flujo de trabajo para el proyecto.
+
+Cambios realizados: v0.1.9
+
