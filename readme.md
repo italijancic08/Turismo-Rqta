@@ -262,7 +262,7 @@ Responsables: Valentino Rivas
 * Pagina admin-actividades terminada
 * Menu desplegable arreglado
 
-# Última Actualización
+# v0.1.9
 
 Fecha: 14/07/2026
 
@@ -272,5 +272,20 @@ Responsable: Gabriel Oviedo
 * Creación del archivo AGENTS.md para OpenCode.
 * Documentación inicial de convenciones y flujo de trabajo para el proyecto.
 
-Cambios realizados: v0.1.9
+# Última Actualización
+
+Fecha: 21/07/2026
+
+Responsables: Gabriel Oviedo
+
+### Agregado
+
+- Configuración del entorno de desarrollo con OpenCode Skills.
+- Incorporación de skills para frontend, backend, Git, documentación, accesibilidad y bases de datos.
+- Mejora de la skill `golang-documentation` con documentación de referencia ampliada.
+- Incorporadas skills para:
+  - frontend-design
+  - find-skills
+  - git-advanced-workflows
+  - documentation
 
