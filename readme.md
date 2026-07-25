@@ -59,6 +59,49 @@ Modernizar el portal turístico de la ciudad permitiendo:
 
 ---
 
+## 🛠️ Configuración de desarrollo
+
+El proyecto utiliza una carpeta `.agents/skills` para definir reglas y estándares utilizados por herramientas de asistencia de desarrollo.
+
+Estas skills ayudan a mantener consistencia en el código, diseño y flujo de trabajo.
+
+### Skills configuradas
+
+- **turismo-rqta**
+  - Contexto específico del proyecto.
+  - Define stack tecnológico, estructura, convenciones y reglas de desarrollo.
+
+- **frontend-design**
+  - Guías para creación y mejora de interfaces.
+  - Mantiene criterios de diseño visual, componentes y experiencia de usuario.
+
+- **responsive-design**
+  - Patrones de diseño responsive.
+  - Uso de layouts fluidos, breakpoints, CSS Grid, Flexbox y adaptación mobile-first.
+
+- **accessibility**
+  - Reglas de accesibilidad basadas en WCAG 2.2.
+  - Incluye buenas prácticas para HTML semántico, navegación con teclado, contraste y soporte para tecnologías asistivas.
+
+- **git-advanced-workflows**
+  - Buenas prácticas para manejo de ramas, commits y flujo colaborativo.
+
+- **requesting-code-review**
+  - Estándares para revisión y mejora de código.
+
+  ### Estructura de configuración
+
+
+.agents/
+└── skills/
+    ├── accessibility/
+    ├── frontend-design/
+    ├── responsive-design/
+    ├── git-advanced-workflows/
+    ├── requesting-code-review/
+    └── turismo-rqta/
+        └── SKILL.md
+
 # Registro de Versiones
 
 ## v0.1.0 - Inicio del Proyecto
@@ -272,20 +315,45 @@ Responsable: Gabriel Oviedo
 * Creación del archivo AGENTS.md para OpenCode.
 * Documentación inicial de convenciones y flujo de trabajo para el proyecto.
 
+# v0.1.10 - Incorporación de OpenCode Skills y documentación del proyecto
+
+Fecha: 24/07/2026
+
+Responsable: Gabriel Oviedo
+
+### Agregado
+* Incorporación de buenas prácticas de desarrollo frontend.
+* Agregadas nuevas skills:
+  - frontend-design
+  - responsive-design
+  - accessibility
+  - find-skills
+  - git-advanced-workflows
+  - golang-documentation
+  - requesting-code-review
+  
+
+### Mejorado
+
+* Mejor organización del flujo de trabajo con OpenCode.
+* Definición de convenciones del proyecto.
+* Mejora en la asistencia para generación y revisión de código.
+* Aplicación de criterios WCAG 2.2 para accesibilidad.
+* Aplicación de patrones de diseño responsive con CSS moderno.
+
+### Documentación
+
+* Actualización del sistema de documentación interna del proyecto.
+* Preparación de estructura `.agents/skills` para automatización y soporte del desarrollo.
+
 # Última Actualización
 
-Fecha: 21/07/2026
+Fecha: 24/07/2026
 
 Responsable: Gabriel Oviedo
 
 ### Agregado
 
-- Configuración del entorno de desarrollo con OpenCode Skills.
-- Incorporación de skills para frontend, backend, Git, documentación, accesibilidad y bases de datos.
-- Mejora de la skill `golang-documentation` con documentación de referencia ampliada.
-- Incorporadas skills para:
-  - frontend-design
-  - find-skills
-  - git-advanced-workflows
-  - documentation
-
+- Incorporación de la skill personalizada `turismo-rqta`.
+- Integración de skills de accesibilidad y diseño responsive.
+- Actualización de herramientas de soporte para OpenCode.
