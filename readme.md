@@ -276,7 +276,7 @@ Responsable: Gabriel Oviedo
 
 Fecha: 21/07/2026
 
-Responsables: Gabriel Oviedo
+Responsable: Gabriel Oviedo
 
 ### Agregado
 
