@@ -347,7 +347,7 @@ Responsable: Gabriel Oviedo
 
 # Última Actualización
 
-Fecha: 27/07/2026
+Fecha: 28/07/2026
 
 Responsables: Gabriel Oviedo
 
@@ -356,6 +356,8 @@ Responsables: Gabriel Oviedo
   - nodejs-express-server
   - modern-javascript-patterns
   - systematic-debugging
+  - database-schema-designer
+  - openapi-spec-generation
   
 
 * Creación y configuración de archivos `.gitignore` para excluir dependencias y archivos sensibles.
