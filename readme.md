@@ -329,7 +329,6 @@ Responsable: Gabriel Oviedo
   - accessibility
   - find-skills
   - git-advanced-workflows
-  - golang-documentation
   - requesting-code-review
   
 
@@ -348,12 +347,25 @@ Responsable: Gabriel Oviedo
 
 # Última Actualización
 
-Fecha: 24/07/2026
+Fecha: 28/07/2026
 
-Responsable: Gabriel Oviedo
+Responsables: Gabriel Oviedo
 
 ### Agregado
+* Incorporación de nuevas skills para mejorar el desarrollo del proyecto:
+  - nodejs-express-server
+  - modern-javascript-patterns
+  - systematic-debugging
+  - database-schema-designer
+  - openapi-spec-generation
+  
 
-- Incorporación de la skill personalizada `turismo-rqta`.
-- Integración de skills de accesibilidad y diseño responsive.
-- Actualización de herramientas de soporte para OpenCode.
+* Creación y configuración de archivos `.gitignore` para excluir dependencias y archivos sensibles.
+* Eliminación de `node_modules` del repositorio para mejorar la gestión de dependencias.
+* Limpieza de skill innecesaria de Golang ya que el proyecto utiliza Node.js y Express.
+
+### Mejorado
+* Organización del entorno de desarrollo para trabajar con OpenCode y AGENTS.md.
+* Preparación del proyecto para mejores prácticas de desarrollo.
+
+Cambios realizados: v0.1.10
